@@ -1,0 +1,14 @@
+# Nothing secret belongs in this repo -- it is PUBLIC by design.
+# These patterns are a backstop, not a policy. See README.md.
+*.pat
+*.token
+*.key
+*.pem
+.env
+secrets*
+credentials*
+
+# Local build scratch
+*.tmp
+Output/
+build/
