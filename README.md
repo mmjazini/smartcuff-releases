@@ -4,13 +4,25 @@ Public download channel for the **SmartCuff** GUI installer.
 
 University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
+## Download
+
+**[Download the latest verified SmartCuff installer](https://github.com/mmjazini/smartcuff-releases/releases/latest/download/SmartCuff_Setup.exe)**
+
+Current stable release: [`rev27v-followup-221`](https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-followup-221)
+
+- Installer size: `274,611,577` bytes
+- SHA-256: `cc4763909049f765f39d7b187182f8364d523b2a404db30504a1102e40c61de4`
+- Bundled firmware: `rev27v-followup-219`
+
 ---
 
 ## What this repository is
 
-This repo contains **built installers and a version manifest — nothing else**. It
-exists so the installed GUI can check for updates and download them over plain
-public HTTPS, with **no credentials of any kind in the client**.
+This repo contains a public version manifest and release documentation. Built
+installers are attached as **GitHub Release assets**, not committed as Git
+blobs. The channel exists so the installed GUI can check for updates and
+download them over plain public HTTPS, with **no credentials of any kind in the
+client**.
 
 Source code lives in the private development repository. Only release artifacts
 are published here.
@@ -47,10 +59,11 @@ step toward that.
 
 ```
 version.json                 update manifest, read by the GUI
-releases/<version>/          one directory per published version
-  SmartCuffSetup-<ver>.exe   the installer
-  SHA256SUMS                 checksums for everything in that directory
-  RELEASE_NOTES.md           what changed
+releases/<version>/          tracked human-readable release notes
+
+GitHub Releases:
+  SmartCuff_Setup.exe        versioned release asset used by the GUI
+  SmartCuff_Setup.exe.sha256 matching checksum sidecar
 ```
 
 ## `version.json`
@@ -82,11 +95,14 @@ keep running it. Everything else is advisory.
 ## Publishing a release
 
 1. Build the installer (`installer/Build-Installer.ps1`).
-2. Create `releases/<version>/`, copy the installer in.
-3. Generate `SHA256SUMS` in that directory.
-4. Write `RELEASE_NOTES.md`.
-5. Update `version.json` — including `sha256` and `size_bytes`.
-6. Commit and push.
+2. Verify the generated `.sha256` sidecar against the installer bytes.
+3. Publish both files as GitHub Release assets named `SmartCuff_Setup.exe` and
+   `SmartCuff_Setup.exe.sha256`.
+4. Write and commit `releases/<version>/RELEASE_NOTES.md`.
+5. Update `version.json` with the version-specific release-asset URL, SHA-256,
+   and byte size.
+6. Commit, push, then fetch the manifest and installer without authentication
+   and recompute the downloaded file's hash.
 
 The GUI picks it up on its next check. No server, no build system, no credential.
 
