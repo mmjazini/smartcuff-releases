@@ -12,18 +12,16 @@
     "Keep installer_url version-specific: an existing manifest must always",
     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
   ],
-
   "schema": 1,
-  "version": "rev27v-followup-222",
+  "version": "rev27v-followup-223",
   "published": "2026-09-06",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-followup-222/SmartCuff_Setup.exe",
-  "sha256": "04971f1a2885bf57116d98265e0143d6edc22c4d7cd020c2dc58616f7fe704f1",
-  "size_bytes": 266496395,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-followup-223/SmartCuff_Setup.exe",
+  "sha256": "92ec38137955bd521f64bcc6ab989f2ed7c5448277a19933d1269dd7569a3e65",
+  "size_bytes": 265835966,
   "min_supported": null,
-  "notes": "Reliable branch handoff, branded Windows icons, and verified GUI startup without Arduino or NI-DAQ hardware. Firmware remains rev27v-followup-219.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-followup-222",
+  "notes": "Fixes the fast-deflation valve closing jump and pressure rebound at the 15 mmHg measured-rate handoff. Device A passed the fixed-seed 10-minute soak: 6/6 cycles, 100.00% telemetry delivery, reversal gate pass, and live OLED counters. Firmware and application are rev27v-followup-223.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-followup-223",
   "mandatory": false,
-
   "channel": "stable",
   "_channel_note": [
     "'stable' is the only channel today. If a test channel is ever added, publish",
