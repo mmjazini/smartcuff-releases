@@ -6,13 +6,21 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified SmartCuff installer](https://github.com/mmjazini/smartcuff-releases/releases/latest/download/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-followup-227/SmartCuff_Setup.exe)**
 
-Current stable release: [`rev27v-followup-221`](https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-followup-221)
+Current Default release: [`rev27v-followup-227`](https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-followup-227)
 
-- Installer size: `274,611,577` bytes
-- SHA-256: `cc4763909049f765f39d7b187182f8364d523b2a404db30504a1102e40c61de4`
-- Bundled firmware: `rev27v-followup-219`
+- Installer size: `223,779,957` bytes
+- SHA-256: `44461ce276ff58e9e79818f448a02304afe40d00fd1ec9c23a4cec3d883e36a3`
+- Bundled firmware: `rev27v-followup-223`
+
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-gauge-34/SmartCuff_Setup.exe)**
+
+Current Valinor release: [`rev27v-gauge-34`](https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-gauge-34)
+
+- Installer size: `5,664,848` bytes
+- SHA-256: `8f0fea0188768e97ca2c128ae19f0877e8ba5057089f9e784512fa448b41ccae`
+- Bundled firmware: `rev27v-gauge-27`
 
 ---
 
@@ -58,7 +66,8 @@ step toward that.
 ## Layout
 
 ```
-version.json                 update manifest, read by the GUI
+version.json                 Default update manifest
+version-valinor.json         Valinor update manifest
 releases/<version>/          tracked human-readable release notes
 
 GitHub Releases:
@@ -66,13 +75,15 @@ GitHub Releases:
   SmartCuff_Setup.exe.sha256 matching checksum sidecar
 ```
 
-## `version.json`
+## Branch-specific manifests
 
-The GUI fetches this single file and compares `version` against its own build.
-Served raw over HTTPS:
+The GUI selects exactly one manifest from its installed application version.
+Default accepts only `rev27v-followup-*`; Valinor accepts only
+`rev27v-gauge-*`. Served raw over HTTPS:
 
 ```
 https://raw.githubusercontent.com/mmjazini/smartcuff-releases/main/version.json
+https://raw.githubusercontent.com/mmjazini/smartcuff-releases/main/version-valinor.json
 ```
 
 Fields:
@@ -99,8 +110,8 @@ keep running it. Everything else is advisory.
 3. Publish both files as GitHub Release assets named `SmartCuff_Setup.exe` and
    `SmartCuff_Setup.exe.sha256`.
 4. Write and commit `releases/<version>/RELEASE_NOTES.md`.
-5. Update `version.json` with the version-specific release-asset URL, SHA-256,
-   and byte size.
+5. Update the matching branch manifest with the version-specific release-asset
+   URL, SHA-256, and byte size.
 6. Commit, push, then fetch the manifest and installer without authentication
    and recompute the downloaded file's hash.
 
@@ -108,16 +119,15 @@ The GUI picks it up on its next check. No server, no build system, no credential
 
 ## What the client must do
 
-- Fetch `version.json` over HTTPS. Fail **soft**: a network error must never block
-  a session, because this device is used at a bench and often offline.
+- Fetch the branch-specific manifest over HTTPS. Fail **soft**: missing Git,
+  GitHub, DNS, TLS, or internet must never block startup or offline operation.
 - Compare versions. Do not assume string ordering — parse the `rev`/`followup`
   numbering.
 - Download to a temp path, **verify `sha256` before executing anything**. A
   mismatch means abort and report, not retry silently.
-- Never auto-install mid-session. Offer it, and let the operator choose when.
-
-That last point is not cosmetic. A firmware/GUI version mismatch is already a
-known failure mode on this project — the GUI checks
-`EXPECTED_FIRMWARE_VERSION` against the device on connect — so an update that
-lands between a calibration and a run would produce exactly the confusing
-mismatch that check exists to catch.
+- Install automatically only after the live safety gate proves no active
+  protocol/SysID/calibration and either no connected controller or fresh IDLE,
+  pump-off, cuff-at-or-below-5-mmHg telemetry. The GUI then relaunches and uses
+  its protected one-Due snapshot/flash/restore path if firmware alignment is
+  required. The user may select an older verified same-branch release from Help;
+  that exact pin remains active until Latest is selected again.

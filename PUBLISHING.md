@@ -44,8 +44,10 @@ to users, so nothing after step 5 should be able to fail.
 
 6. Manifest
    --------
-   Only after the assets exist, update version.json: version, published,
-   installer_url, sha256, size_bytes, min_supported, notes_url, mandatory.
+   Only after the assets exist, update `version.json` for Default or
+   `version-valinor.json` for Valinor: version, published, installer_url,
+   sha256, size_bytes, min_supported, notes_url, mandatory. Never point one
+   branch at the other branch's release family.
 
    installer_url form:
        https://github.com/mmjazini/smartcuff-releases/releases/download/<version>/SmartCuff_Setup.exe
