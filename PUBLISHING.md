@@ -7,7 +7,11 @@ to users, so nothing after step 5 should be able to fail.
 1. Build
    ------
    From the development repo:
-       powershell -ExecutionPolicy Bypass -File installer\Build-Installer.ps1
+       powershell -ExecutionPolicy Bypass -File installer\Build-Installer.ps1 -AllowUnsigned
+
+   `-AllowUnsigned` is intentional while the operator accepts Windows'
+   **Unknown publisher** warning. Omit it when a trusted Authenticode signing
+   identity is configured.
 
    Confirm installer/SmartCuff.iss AppVersion matches
    gui/firmware_version.py APPLICATION_VERSION. Separately confirm its
@@ -40,7 +44,9 @@ to users, so nothing after step 5 should be able to fail.
 5. Publish release assets
    ----------------------
    Create the GitHub Release and upload SmartCuff_Setup.exe plus its `.sha256`
-   sidecar. Never replace an existing tag's bytes; bump the version instead.
+   sidecar. Unsigned publication requires the explicit `-AllowUnsigned` switch
+   in `installer\Publish-Release.ps1`. Never replace an existing tag's bytes;
+   bump the version instead.
 
 6. Manifest
    --------

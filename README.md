@@ -6,21 +6,23 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-followup-227/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.229/SmartCuff_Setup.exe)**
 
-Current Default release: [`rev27v-followup-227`](https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-followup-227)
+Current Default release: [`v3.1.229`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.229)
 
-- Installer size: `223,779,957` bytes
-- SHA-256: `44461ce276ff58e9e79818f448a02304afe40d00fd1ec9c23a4cec3d883e36a3`
+- Installer size: `265,877,118` bytes
+- SHA-256: `8ecbc7f1e0701f0d381cddff283998269ec78b131fff9c79c4536ca1356e74da`
 - Bundled firmware: `rev27v-followup-223`
+- Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-gauge-34/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.36/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`rev27v-gauge-34`](https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-gauge-34)
+Current Valinor release: [`v3.2.36`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.36)
 
-- Installer size: `5,664,848` bytes
-- SHA-256: `8f0fea0188768e97ca2c128ae19f0877e8ba5057089f9e784512fa448b41ccae`
+- Installer size: `5,679,120` bytes
+- SHA-256: `668607713d9f09cb66403412b114b142b4b914c73e4aca00f77f427a3c7eabf8`
 - Bundled firmware: `rev27v-gauge-27`
+- Signature: unsigned; Windows displays **Unknown publisher**
 
 ---
 
@@ -78,8 +80,8 @@ GitHub Releases:
 ## Branch-specific manifests
 
 The GUI selects exactly one manifest from its installed application version.
-Default accepts only `rev27v-followup-*`; Valinor accepts only
-`rev27v-gauge-*`. Served raw over HTTPS:
+Default accepts its legacy `rev27v-followup-*` releases and semantic `v3.1.*`
+releases; Valinor accepts `rev27v-gauge-*` and `v3.2.*`. Served raw over HTTPS:
 
 ```
 https://raw.githubusercontent.com/mmjazini/smartcuff-releases/main/version.json
@@ -105,10 +107,12 @@ keep running it. Everything else is advisory.
 
 ## Publishing a release
 
-1. Build the installer (`installer/Build-Installer.ps1`).
+1. Build the installer. Use `installer/Build-Installer.ps1 -AllowUnsigned` only
+   when the operator has explicitly accepted Windows' Unknown publisher warning.
 2. Verify the generated `.sha256` sidecar against the installer bytes.
 3. Publish both files as GitHub Release assets named `SmartCuff_Setup.exe` and
-   `SmartCuff_Setup.exe.sha256`.
+   `SmartCuff_Setup.exe.sha256`. Unsigned publication also requires the explicit
+   `Publish-Release.ps1 -AllowUnsigned` switch.
 4. Write and commit `releases/<version>/RELEASE_NOTES.md`.
 5. Update the matching branch manifest with the version-specific release-asset
    URL, SHA-256, and byte size.

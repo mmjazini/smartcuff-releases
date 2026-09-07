@@ -1,18 +1,18 @@
 {
   "_comment": [
     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-    "rev27v-gauge-* releases and is intentionally separate from version.json.",
+    "v3.2.* releases and is intentionally separate from version.json.",
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "rev27v-gauge-34",
+  "version": "v3.2.36",
   "published": "2026-09-07",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/rev27v-gauge-34/SmartCuff_Setup.exe",
-  "sha256": "8f0fea0188768e97ca2c128ae19f0877e8ba5057089f9e784512fa448b41ccae",
-  "size_bytes": 5664848,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.36/SmartCuff_Setup.exe",
+  "sha256": "668607713d9f09cb66403412b114b142b4b914c73e4aca00f77f427a3c7eabf8",
+  "size_bytes": 5679120,
   "min_supported": null,
-  "notes": "Adds the branch-isolated automatic update feed, verified historical pins and downgrades, guarded automatic installation and firmware alignment, writable per-user installation, and the plain user-facing name Smart Cuff. Missing Git, GitHub, internet, Arduino, or NI-DAQ never prevents the GUI from opening. Firmware remains rev27v-gauge-27.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/rev27v-gauge-34",
+  "notes": "Prevents Windows update-download promotion failures by using collision-free installer filenames with bounded retries. This release is intentionally unsigned and Windows will show Unknown publisher; exact URL, size, SHA-256, and pneumatic safety checks remain enforced. Control behavior and firmware remain unchanged at rev27v-gauge-27.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.36",
   "mandatory": false,
   "channel": "valinor"
 }
