@@ -6,23 +6,36 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.229/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.230/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.229`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.229)
+Current Default release: [`v3.1.230`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.230)
 
-- Installer size: `265,877,118` bytes
-- SHA-256: `8ecbc7f1e0701f0d381cddff283998269ec78b131fff9c79c4536ca1356e74da`
+- Installer size: `265,919,199` bytes
+- SHA-256: `2548bc89d5d88c324cf58501b31fd005925c2e3b64b97b567d40ade8db6c8b9a`
 - Bundled firmware: `rev27v-followup-223`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.36/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.37/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.36`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.36)
+Current Valinor release: [`v3.2.37`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.37)
 
-- Installer size: `5,679,120` bytes
-- SHA-256: `668607713d9f09cb66403412b114b142b4b914c73e4aca00f77f427a3c7eabf8`
+- Installer size: `5,680,046` bytes
+- SHA-256: `f14e2ad12c3b51b0d76a0c876cacbd29f8c5578908e3532b072f908081b534ba`
 - Bundled firmware: `rev27v-gauge-27`
 - Signature: unsigned; Windows displays **Unknown publisher**
+
+### Windows SmartScreen
+
+The installers are currently unsigned. Windows may show **Windows protected
+your PC** and **Unknown publisher**. If—and only if—you downloaded the official
+`SmartCuff_Setup.exe` from this GitHub repository:
+
+1. Select **More info**.
+2. Verify the app name is `SmartCuff_Setup.exe`.
+3. Select **Run anyway**.
+
+Do not continue with a differently named file or an installer from another
+source. Each release includes a SHA-256 checksum for independent verification.
 
 ---
 

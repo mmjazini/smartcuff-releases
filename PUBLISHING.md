@@ -36,6 +36,13 @@ to users, so nothing after step 5 should be able to fail.
    Write releases/<version>/RELEASE_NOTES.md in this repository and use the
    same text as the GitHub Release description.
 
+   While installers are unsigned, every GitHub Release description must tell
+   users that Windows can show **Windows protected your PC** and **Unknown
+   publisher**, then give the exact official-installer steps: select **More
+   info**, verify `SmartCuff_Setup.exe`, and select **Run anyway**. Also warn
+   users not to proceed with a differently named file or another download
+   source.
+
    State plainly what changed in the CONTROL PATH, if anything. Users of this
    device care about deflation behaviour and calibration handling far more than
    about UI polish. If a previous release had a defect that mis-reported
