@@ -1,0 +1,15 @@
+# Smart Cuff v3.1.233 (Default)
+
+- Restores the previous transparent Smart Cuff heart logo in the GUI,
+  taskbar, installer, Windows uninstall entry, Start Menu, and desktop
+  shortcut.
+- Excludes local diagnostic runs, sample captures, and backup files from the
+  public installer. This supersedes v3.1.232 before wider rollout.
+
+Firmware remains `rev27v-followup-223`; no control behavior changed.
+
+## Windows SmartScreen / Unknown publisher
+
+This official installer is currently unsigned. If Windows shows **Windows
+protected your PC**, download only from this repository, verify the file is
+`SmartCuff_Setup.exe`, select **More info**, then select **Run anyway**.

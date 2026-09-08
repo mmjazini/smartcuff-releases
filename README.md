@@ -6,12 +6,12 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.232/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.233/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.232`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.232)
+Current Default release: [`v3.1.233`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.233)
 
-- Installer size: `265,885,786` bytes
-- SHA-256: `7b394796d64a075ddcd25e58d1e88fd5ec642e927eb40214dd610cda9d49f5ec`
+- Installer size: `225,897,949` bytes
+- SHA-256: `a107de47f14273c8f35d00f6733464656e3a7bfeae7e0507250262941d84147f`
 - Bundled firmware: `rev27v-followup-223`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
