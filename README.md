@@ -6,21 +6,21 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.230/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.231/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.230`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.230)
+Current Default release: [`v3.1.231`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.231)
 
-- Installer size: `265,919,199` bytes
-- SHA-256: `2548bc89d5d88c324cf58501b31fd005925c2e3b64b97b567d40ade8db6c8b9a`
+- Installer size: `267,578,781` bytes
+- SHA-256: `078737cc16c307d9699885b20519c04889986423c979d376fa6310763c409398`
 - Bundled firmware: `rev27v-followup-223`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.37/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.38/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.37`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.37)
+Current Valinor release: [`v3.2.38`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.38)
 
-- Installer size: `5,680,046` bytes
-- SHA-256: `f14e2ad12c3b51b0d76a0c876cacbd29f8c5578908e3532b072f908081b534ba`
+- Installer size: `7,350,634` bytes
+- SHA-256: `fa79200ec6bf58c5f0fe5864d870c95d07716fa883e373b287bcc128727505fb`
 - Bundled firmware: `rev27v-gauge-27`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
@@ -36,6 +36,15 @@ your PC** and **Unknown publisher**. If—and only if—you downloaded the offic
 
 Do not continue with a differently named file or an installer from another
 source. Each release includes a SHA-256 checksum for independent verification.
+
+### What happens after an update
+
+Smart Cuff closes briefly while the verified installer replaces the
+application. A separate supervisor waits for Setup to finish and then reopens
+the new copy automatically. If exactly one Arduino Due is attached, the
+launcher aligns that controller with the bundled branch firmware before the GUI
+opens. With no Due, the GUI opens offline; multiple Dues or a failed upload stop
+startup rather than guessing a hardware target.
 
 ---
 
@@ -144,7 +153,9 @@ The GUI picks it up on its next check. No server, no build system, no credential
   mismatch means abort and report, not retry silently.
 - Install automatically only after the live safety gate proves no active
   protocol/SysID/calibration and either no connected controller or fresh IDLE,
-  pump-off, cuff-at-or-below-5-mmHg telemetry. The GUI then relaunches and uses
-  its protected one-Due snapshot/flash/restore path if firmware alignment is
-  required. The user may select an older verified same-branch release from Help;
+  pump-off, cuff-at-or-below-5-mmHg telemetry. A detached supervisor waits for
+  Setup and relaunches the new installed copy. Before that GUI opens, exactly
+  one attached Due is passed through the protected snapshot/flash/restore path;
+  no Due is a supported offline case and ambiguous hardware fails closed. The
+  user may select an older verified same-branch release from Help;
   that exact pin remains active until Latest is selected again.
