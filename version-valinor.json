@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.39",
+  "version": "v3.2.41",
   "published": "2026-09-08",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.39/SmartCuff_Setup.exe",
-  "sha256": "6b64c57c13027458d68c950ab4175d26b6ad7eae414ca5a74f0d1bb4062213bb",
-  "size_bytes": 7815987,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.41/SmartCuff_Setup.exe",
+  "sha256": "5c8ff20912cbeb569116f24c7d0f7e365bc416e1bf9b3a22c349c66ec12692b8",
+  "size_bytes": 5682983,
   "min_supported": null,
-  "notes": "Restores the previous transparent Smart Cuff heart logo in the GUI, taskbar, installer, uninstaller, Start Menu, and desktop shortcut. Local diagnostic bundles and backups are excluded from the package. This release is intentionally unsigned: for the official GitHub installer, select More info, verify SmartCuff_Setup.exe, then select Run anyway. Control behavior and firmware remain unchanged at rev27v-gauge-27.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.39",
+  "notes": "Strengthens Valinor USB command integrity with tagged CRC-16, bounded writes and retries, and exact parsed-EXEC verification. Firmware rev27v-gauge-29 preserves the existing Max-preset control profile. This release is intentionally unsigned: for the official GitHub installer, select More info, verify SmartCuff_Setup.exe, then select Run anyway.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.41",
   "mandatory": false,
   "channel": "valinor"
 }

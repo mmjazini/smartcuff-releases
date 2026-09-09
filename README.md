@@ -15,13 +15,13 @@ Current Default release: [`v3.1.237`](https://github.com/mmjazini/smartcuff-rele
 - Bundled firmware: `rev27v-followup-227`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.39/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.41/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.39`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.39)
+Current Valinor release: [`v3.2.41`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.41)
 
-- Installer size: `7,815,987` bytes
-- SHA-256: `6b64c57c13027458d68c950ab4175d26b6ad7eae414ca5a74f0d1bb4062213bb`
-- Bundled firmware: `rev27v-gauge-27`
+- Installer size: `5,682,983` bytes
+- SHA-256: `5c8ff20912cbeb569116f24c7d0f7e365bc416e1bf9b3a22c349c66ec12692b8`
+- Bundled firmware: `rev27v-gauge-29`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
 ### Windows SmartScreen
