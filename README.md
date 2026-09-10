@@ -6,29 +6,30 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.244/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.245/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.244`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.244)
+Current Default release: [`v3.1.245`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.245)
 
-- Installer size: `231,769,898` bytes
-- SHA-256: `6eb14843089daf885700ceb50827275966c0036a4328b45ca1ebd1c153bc78c4`
+- Installer size: `223,797,873` bytes
+- SHA-256: `673deb53724b4cc880aef8e412082fbb9c29884cf0710323a9be758f5a3cd577`
 - Bundled firmware: `rev27v-followup-232`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.46/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.47/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.46`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.46)
+Current Valinor release: [`v3.2.47`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.47)
 
-- Installer size: `5,701,802` bytes
-- SHA-256: `0233549b667d52330b078eed2eaa914917b9c2e6027a2dd376eb8bfcf69249c1`
+- Installer size: `5,709,922` bytes
+- SHA-256: `8ee00895dcf806832136a88936792904c79900fd9ba75eb1b88d44b2b96f8638`
 - Bundled firmware: `rev27v-gauge-33`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
 Default includes its offline Python/Arduino runtime. Valinor is intentionally a
 small online installer; first-time setup requires internet. Both installed GUIs
-work without GitHub or hardware. These releases improve OLED recovery and
-responsiveness, but do not claim electrical/pixel sign-off or a completely clean
-USB link. See each release's measured results and remaining limitations.
+work without GitHub or hardware. These host-only releases keep live calibration
+independent of code branches and test new E-H device profiles. Firmware and
+OLED recovery are unchanged. They do not claim electrical/pixel sign-off or a
+completely clean USB link. See each release's evidence and limitations.
 
 ### Windows SmartScreen
 

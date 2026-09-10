@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.46",
-  "published": "2026-09-09",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.46/SmartCuff_Setup.exe",
-  "sha256": "0233549b667d52330b078eed2eaa914917b9c2e6027a2dd376eb8bfcf69249c1",
-  "size_bytes": 5701802,
+  "version": "v3.2.47",
+  "published": "2026-09-10",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.47/SmartCuff_Setup.exe",
+  "sha256": "8ee00895dcf806832136a88936792904c79900fd9ba75eb1b88d44b2b96f8638",
+  "size_bytes": 5709922,
   "min_supported": null,
-  "notes": "Bounded OLED frame service, guarded Flash-tab controller recovery, exact-firmware operational interlocks, and a windowless launcher. Bundled firmware rev27v-gauge-33; branch preset/control parameters are unchanged. Validated A-D profiles are included with exact hash receipts and preserve newer local data. Both branches passed control scoring at 100% emitted-frame telemetry delivery; recovered USB checksum/retry warnings remain. Physical OLED cold-power appearance still requires operator checks. This official installer is unsigned: select More info, verify SmartCuff_Setup.exe from this repository, then Run anyway.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.46",
+  "notes": "Calibration-safe Default/Valinor branch switching: live device snapshots stay local, reviewed profiles are separate validated release inputs, and switches cannot overwrite ignored data. New E-H device-profile isolation and packaging are regression-tested; assigned IDs remain A-H. Bundled firmware rev27v-gauge-33 is unchanged; existing OLED recovery and control parity are retained. USB retry warnings and fleet intake activation remain open. This official installer is unsigned: choose More info, verify SmartCuff_Setup.exe from this repository, then Run anyway.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.47",
   "mandatory": false,
   "channel": "valinor"
 }

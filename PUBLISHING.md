@@ -19,6 +19,13 @@ to users, so nothing after step 5 should be able to fail.
    FIRMWARE_VERSION. GUI-only installer releases intentionally advance the app
    version without pretending the firmware changed.
 
+   Live gui/calibration/device_*_state.json files are local data, not Git source.
+   Reviewed source baselines live in installer/calibration_profiles. To ship
+   newer accepted profiles, pass -CalibrationProfilesDir <accepted-directory>;
+   the builder freezes and validates A-D plus any new E-H profiles and records
+   each file's size/SHA-256. Never stage, discard, or stash live calibration
+   just to clear a branch/build gate. Devices need their own accepted data.
+
 2. Stage
    -----
    Keep the built file named SmartCuff_Setup.exe. Do not copy this large binary
