@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.42",
+  "version": "v3.2.46",
   "published": "2026-09-09",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.42/SmartCuff_Setup.exe",
-  "sha256": "f1f72cccc6210f81790cd71cafebed84f4839468bb337ba09747561509db2e0c",
-  "size_bytes": 5683812,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.46/SmartCuff_Setup.exe",
+  "sha256": "0233549b667d52330b078eed2eaa914917b9c2e6027a2dd376eb8bfcf69249c1",
+  "size_bytes": 5701802,
   "min_supported": null,
-  "notes": "Separates the six coarse knob-takeover zones from the 15 exact Max 80-220 targets and bounds full-scale zone reads. Firmware rev27v-gauge-30 preserves every Max control parameter and includes tagged CRC-16 USB protection. This release is intentionally unsigned: for the official GitHub installer, select More info, verify SmartCuff_Setup.exe, then select Run anyway.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.42",
+  "notes": "Bounded OLED frame service, guarded Flash-tab controller recovery, exact-firmware operational interlocks, and a windowless launcher. Bundled firmware rev27v-gauge-33; branch preset/control parameters are unchanged. Validated A-D profiles are included with exact hash receipts and preserve newer local data. Both branches passed control scoring at 100% emitted-frame telemetry delivery; recovered USB checksum/retry warnings remain. Physical OLED cold-power appearance still requires operator checks. This official installer is unsigned: select More info, verify SmartCuff_Setup.exe from this repository, then Run anyway.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.46",
   "mandatory": false,
   "channel": "valinor"
 }

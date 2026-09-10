@@ -6,23 +6,29 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.238/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.244/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.238`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.238)
+Current Default release: [`v3.1.244`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.244)
 
-- Installer size: `225,945,276` bytes
-- SHA-256: `ac5d3aff75e4cf7da29714df7a854945a9227c2b4e79946be63165acd4faa20e`
-- Bundled firmware: `rev27v-followup-227`
+- Installer size: `231,769,898` bytes
+- SHA-256: `6eb14843089daf885700ceb50827275966c0036a4328b45ca1ebd1c153bc78c4`
+- Bundled firmware: `rev27v-followup-232`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.42/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.46/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.42`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.42)
+Current Valinor release: [`v3.2.46`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.46)
 
-- Installer size: `5,683,812` bytes
-- SHA-256: `f1f72cccc6210f81790cd71cafebed84f4839468bb337ba09747561509db2e0c`
-- Bundled firmware: `rev27v-gauge-30`
+- Installer size: `5,701,802` bytes
+- SHA-256: `0233549b667d52330b078eed2eaa914917b9c2e6027a2dd376eb8bfcf69249c1`
+- Bundled firmware: `rev27v-gauge-33`
 - Signature: unsigned; Windows displays **Unknown publisher**
+
+Default includes its offline Python/Arduino runtime. Valinor is intentionally a
+small online installer; first-time setup requires internet. Both installed GUIs
+work without GitHub or hardware. These releases improve OLED recovery and
+responsiveness, but do not claim electrical/pixel sign-off or a completely clean
+USB link. See each release's measured results and remaining limitations.
 
 ### Windows SmartScreen
 
