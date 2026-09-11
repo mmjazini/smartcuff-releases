@@ -6,35 +6,40 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.246/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.247/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.246`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.246)
+Current Default release: [`v3.1.247`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.247)
 
-- Installer size: `223,805,584` bytes
-- SHA-256: `c30418e1891dce61df4cbad28ae0f81ecd7190ddbf81f76ba5eee34ba2d49df7`
+- Installer size: `223,771,488` bytes
+- SHA-256: `e59056b300ce2927cf8d99d27c4b46e7ba2556437203be7e4a617c0902ddc3ab`
 - Bundled firmware: `rev27v-followup-233`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.48/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.49/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.48`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.48)
+Current Valinor release: [`v3.2.49`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.49)
 
-- Installer size: `5,715,328` bytes
-- SHA-256: `f394761ec5154b0b044c9565d9123de5b7e71501932380330e05543ce6aeb800`
+- Installer size: `5,671,957` bytes
+- SHA-256: `70b68f04941352e35b0d6a6d1aa3ca3fb25bd3f1214f407da3ac53d845ccd875`
 - Bundled firmware: `rev27v-gauge-34`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
 Default includes its offline Python/Arduino runtime. Valinor is intentionally a
 small online installer; first-time setup requires internet. Both installed GUIs
-work without GitHub or hardware. These releases fix measured USB receive
-starvation by letting the UART interrupt the complete pressure sampler, while
-preserving safety sampling, calibration, control settings, branch menus and
-standalone/GUI parity. Both returned 1000/1000 first-attempt read-only requests
-without CRC failures on Device C. Ten-minute seed-213 soaks passed 6/6 Default
-and 8/8 Valinor cycles, each with **100.00% emitted-frame delivery**. OLED
-counters continued advancing; physical pixel/electrical sign-off is not
-claimed. CRC/retry safeguards remain, and cable/driver faults can still occur.
-See each release's scored evidence and limitations.
+work without GitHub or hardware. These releases refresh the complete local
+HTML guide and PID explainer against current source: branch presets/endpoints,
+calibration/SysID, recording clocks, updates/recovery, OLED/LED limitations and
+Bench/sinusoid operation. Help -> Smart Cuff Guide opens the corrected manual.
+All 22 top-level anchors remain. The interactive PID model is explicitly
+educational, not a hardware emulator or tuning guarantee.
+
+Firmware, control settings and accepted calibration are unchanged, retaining
+the preceding USB/OLED corrections and branch-specific standalone/GUI behavior.
+Default passed 933 tests (3 skipped); Valinor passed 813 (7 skipped). Both
+passed all 13 offline preflight gates and 20 focused guide checks, including
+executable JavaScript controls. No browser visual-rendering check was available.
+Automatic fleet-calibration intake remains inactive; reviewed release profile
+distribution still works. See the release notes for evidence and limits.
 
 ### Windows SmartScreen
 
