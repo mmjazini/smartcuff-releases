@@ -1,12 +1,12 @@
-# Smart Cuff v3.1.250 - safer operation without a device, PID read-back, update recovery
+# Smart Cuff v3.1.250 - MAP-paper flow calibration, PID read-back, safer operation
 
 Default application bundle; firmware remains `rev27v-followup-233`.
-Clean source: `aab952a9ea1abd0ed5be45b786419eab8cfb8dac`.
+Clean source: `32a684d7a422eec9f85199217709ef5300959389`.
 
 ## Control path
 
-Firmware, calibration equations, valve limits and safety thresholds are
-unchanged. Two GUI changes alter what can be sent to the controller:
+Firmware, valve limits and safety thresholds are unchanged. Three GUI
+changes alter what can be sent to the controller:
 
 - **Apply PID defect fixed.** Earlier versions sent all ten PID-tab values on
   every Apply PID press. The inflation gains stored in the controller
@@ -22,6 +22,29 @@ unchanged. Two GUI changes alter what can be sent to the controller:
   when no device is connected. A sweep, leak compensation, Hold, Push-Pump or
   leak-rate measurement left running is stopped when the link drops, so it
   cannot drive the next controller that connects.
+- **Flow calibration (Cal 3) follows the MAP paper.** Each stroke's area now
+  covers the whole stroke, including its start before the 0.1 V trigger.
+  Gains are referred to the mean stroke area. When IN and OUT differ by no
+  more than the stroke-to-stroke scatter, one pooled gain is used for both Kp
+  and Kn, as in the paper; otherwise each direction keeps its own. The review
+  plots every stroke against the resting voltage with its area. Stored
+  calibrations do not change until Cal 3 is re-run and accepted. With the
+  measured-time integration from the unpublished v3.1.249 (strokes had read
+  about 5 % low), a re-run gives gains about 5 % lower than calibrations made
+  with v3.1.247 or earlier. Re-run Cal 3 on each Default device.
+
+## Also new since v3.1.247
+
+v3.1.248 and v3.1.249 were never published, so this is their first delivery:
+
+- **Help -> Safety, PID and Controller Reference**, a source-backed reference
+  for the safety layers, PID equations, limits and handoffs.
+- **GitHub-only fleet calibration** (Help -> Fleet Calibration). Accepted
+  Cal 1/2/3 and trusted SysID results are read back, saved, archived and queued
+  for the private calibration-intake repository with each contributor's own
+  Issues-only token; a maintainer reviews every submission before promotion.
+  Cal 2 snapshots use the Arduino-domain coefficients.
+- **Cal 3 measured-time integration** (v3.1.249): see Flow calibration above.
 
 ## Safety and correctness
 
@@ -65,13 +88,14 @@ unchanged. Two GUI changes alter what can be sent to the controller:
 
 ## Validation
 
-Offline pytest 1012 passed / 40 skipped; the only 2 failures are the
+Offline pytest 1023 passed / 40 skipped; the only 2 failures are the
 branch-name checks, which fail in any checkout that still has a retired
 session branch. Legacy suites 7/7, offscreen GUI smoke without exceptions, and
 layout audit CLEAN at 1600x1000. The update supervisor was exercised under
 PowerShell 7 with simulated Setup exit codes; a real Windows update run, the
-launch gate against a controller with older firmware, and PID read-back on a
-connected controller still need bench confirmation before publishing.
+launch gate against a controller with older firmware, PID read-back on a
+connected controller and a real Cal 3 on each device still need bench
+confirmation before publishing.
 
 Latest users receive this bundle through the Default feed at the existing safe
 idle gate. The installer relaunches Smart Cuff; attached firmware uses
