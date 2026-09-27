@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.49",
-  "published": "2026-09-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.49/SmartCuff_Setup.exe",
-  "sha256": "70b68f04941352e35b0d6a6d1aa3ca3fb25bd3f1214f407da3ac53d845ccd875",
-  "size_bytes": 5671957,
+  "version": "v3.2.51",
+  "published": "2026-09-27",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.51/SmartCuff_Setup.exe",
+  "sha256": "72b71916a49dcef68907030dfe21ae4de48d33d3a6f725aeac520e570a050c55",
+  "size_bytes": 8618361,
   "min_supported": null,
-  "notes": "Complete current-operation HTML guide and PID explainer audit. Corrected Valinor Max 80-220 behavior, calibration/SysID, recording clocks, updates/recovery, OLED/LED evidence and Bench/sinusoid instructions; retired reset recipes and tuning guarantees. Firmware rev27v-gauge-34 and accepted calibration/control settings are unchanged. Offline tests: 813 passed / 7 skipped, 13/13 gates; 20 guide checks including executable interactive JavaScript. Fleet intake remains inactive; reviewed release distribution continues. This unsigned online installer needs internet for first setup: More info, verify SmartCuff_Setup.exe from this repository, then Run anyway.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.49",
+  "notes": "Cal 3 flow calibration follows the MAP paper and now integrates over measured time: earlier Valinor flow gains are about 5 % high; re-run Cal 3 per device. Apply PID now reads the controller's gains and sends only changed values (earlier versions overwrote SysID inflation gains). File/Edit/View menus; device actions refuse without a link; STOP from every tab and Esc; launcher checks the controller's firmware; failed updates relaunch the old copy. Firmware rev27v-gauge-34 unchanged. Offline tests 916 passed / 35 skipped. Unsigned online installer: More info, verify SmartCuff_Setup.exe from this repository, then Run anyway.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.51",
   "mandatory": false,
   "channel": "valinor"
 }
