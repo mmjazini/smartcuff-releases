@@ -6,21 +6,21 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.252/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.253/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.252`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.252)
+Current Default release: [`v3.1.253`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.253)
 
-- Installer size: `223,555,082` bytes
-- SHA-256: `7882715048bfa169147ffb9d934d547214a3fdd21d6fafb110c9c8f2eb226774`
+- Installer size: `223,561,079` bytes
+- SHA-256: `d722aecc02565cce633cf2824e4b887d752b750798f8c46ee344830f4f996ca1`
 - Bundled firmware: `rev27v-followup-234`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.53/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.54/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.53`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.53)
+Current Valinor release: [`v3.2.54`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.54)
 
-- Installer size: `5,754,999` bytes
-- SHA-256: `57e8b9e801a7d101ee5f66842bf250c6d71edb456f6d58a995003fe459563a7e`
+- Installer size: `5,757,859` bytes
+- SHA-256: `e249fa6a7a05b691c8b1e65ff0655b11903029311cfed8c59acff6d49418c732`
 - Bundled firmware: `rev27v-gauge-34`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
@@ -28,22 +28,18 @@ Default includes its offline Python/Arduino runtime. Valinor is a small
 online installer; first-time setup needs internet. Both GUIs support offline
 operation after installation; NI-DAQmx is installed separately.
 
-Default Arm/Wrist CVP share the landing, descent and vent behavior with distinct
-55/80 mmHg targets. Device D's protected upload and10-minute seed213 soak passed
-seven cycles with100% telemetry delivery, slope ratios0.93-0.95 and valve
-reversals0.049-0.152/s. Standalone both completed at zero. Peaks still overshoot
-the command targets. Valinor's Max80-220 controls/firmware34 are unchanged.
+Cal 3 now completes its five-second resting countdown despite isolated
+NI-DAQ sample noise. Sustained flow or renewed movement restarts all five
+seconds. Solid lines show the actual rest band; dashed lines show stroke start.
+The RMS detector never filters or gates the raw native-clock volume integral.
+Both flow gains, Kp and Kn, always fit independently from their direction's
+mean whole-stroke nominal volume. Saved calibration remains protected.
 
-Both calibrations integrate every raw NI-DAQ Ch2 sample on the hardware clock.
-Nominal2*(V-V0) is L/min; area times1000/60 is mL. K=known/nominal mL, so
-300/260=1.153846. GUI displays, Cancel, stroke selection, invalid-data gates and
-saved device readback are corrected. No example gains replace saved calibration.
-Physical syringe accuracy and a real fleet transfer remain unverified.
-
-Default passed1088 tests/6 skipped; Valinor970/10 skipped. Both passed13/13
-offline gates and GUI smoke. Existing layout clipping remains. Source, installer
-size/SHA and branch receipts were verified before feed promotion; see each
-release's notes for measured evidence and limits.
+Default passed 1095 tests/6 skipped; Valinor 977/10 skipped. Both passed all
+13 offline gates and GUI smoke. Recorded replay completed both previously
+stalled strokes. Physical syringe accuracy still needs a fresh operator
+calibration. Firmware and preset controls are unchanged in these updates.
+Source, size and SHA-256 were verified before promoting the feeds.
 
 ### Windows SmartScreen
 

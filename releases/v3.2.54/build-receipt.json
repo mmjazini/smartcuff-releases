@@ -1,0 +1,11 @@
+{
+  "firmware": "rev27v-gauge-34",
+  "sha256": "e249fa6a7a05b691c8b1e65ff0655b11903029311cfed8c59acff6d49418c732",
+  "tree_state": "clean",
+  "branch": "valinor",
+  "built_utc": "2026-10-06T19:24:48.8710327Z",
+  "commit": "d29308bb22abf4a859eb60d4654fefd0ebddbe74",
+  "size_bytes": 5757859,
+  "schema": 1,
+  "version": "v3.2.54"
+}

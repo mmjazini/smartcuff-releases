@@ -1,0 +1,11 @@
+{
+  "firmware": "rev27v-followup-234",
+  "version": "v3.1.253",
+  "schema": 1,
+  "tree_state": "clean",
+  "size_bytes": 223561079,
+  "branch": "default",
+  "sha256": "d722aecc02565cce633cf2824e4b887d752b750798f8c46ee344830f4f996ca1",
+  "built_utc": "2026-10-06T19:37:21.7137299Z",
+  "commit": "cdb7aa59d66d570ac173869d7495c91fd30e124f"
+}
