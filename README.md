@@ -6,41 +6,44 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.250/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.252/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.250`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.250)
+Current Default release: [`v3.1.252`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.252)
 
-- Installer size: `226,426,437` bytes
-- SHA-256: `6d12bd2328eac79c74caabd87bcb797875b120569343825456ee4c7b97532638`
-- Bundled firmware: `rev27v-followup-233`
+- Installer size: `223,555,082` bytes
+- SHA-256: `7882715048bfa169147ffb9d934d547214a3fdd21d6fafb110c9c8f2eb226774`
+- Bundled firmware: `rev27v-followup-234`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.51/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.53/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.51`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.51)
+Current Valinor release: [`v3.2.53`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.53)
 
-- Installer size: `8,618,361` bytes
-- SHA-256: `72b71916a49dcef68907030dfe21ae4de48d33d3a6f725aeac520e570a050c55`
+- Installer size: `5,754,999` bytes
+- SHA-256: `57e8b9e801a7d101ee5f66842bf250c6d71edb456f6d58a995003fe459563a7e`
 - Bundled firmware: `rev27v-gauge-34`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-Default includes its offline Python/Arduino runtime. Valinor is intentionally a
-small online installer; first-time setup requires internet. Both installed GUIs
-work without GitHub or hardware.
+Default includes its offline Python/Arduino runtime. Valinor is a small
+online installer; first-time setup needs internet. Both GUIs support offline
+operation after installation; NI-DAQmx is installed separately.
 
-These releases change how Cal 3 computes the flow gains, following the MAP
-paper: whole-stroke areas, gains referred to the mean stroke area, and one
-pooled gain for Kp and Kn when IN and OUT agree within the stroke-to-stroke
-scatter. Stored calibrations change only when Cal 3 is re-run; Valinor's
-earlier flow gains are about 5 % high, so re-run Cal 3 on each device. Apply
-PID now reads the controller's gains and sends only what changed (earlier
-versions overwrote the SysID inflation gains). Device actions refuse without a
-link, STOP works from every tab and Esc, the launcher checks the firmware the
-controller actually runs, and a failed update relaunches the previous copy.
-Firmware is unchanged. Default passed 1023 offline tests (40 skipped); Valinor
-passed 916 (35 skipped). A real Windows update, the launch-time firmware check
-against older firmware, PID read-back and a Cal 3 per device are bench checks
-still to record. See the release notes for details and limits.
+Default Arm/Wrist CVP share the landing, descent and vent behavior with distinct
+55/80 mmHg targets. Device D's protected upload and10-minute seed213 soak passed
+seven cycles with100% telemetry delivery, slope ratios0.93-0.95 and valve
+reversals0.049-0.152/s. Standalone both completed at zero. Peaks still overshoot
+the command targets. Valinor's Max80-220 controls/firmware34 are unchanged.
+
+Both calibrations integrate every raw NI-DAQ Ch2 sample on the hardware clock.
+Nominal2*(V-V0) is L/min; area times1000/60 is mL. K=known/nominal mL, so
+300/260=1.153846. GUI displays, Cancel, stroke selection, invalid-data gates and
+saved device readback are corrected. No example gains replace saved calibration.
+Physical syringe accuracy and a real fleet transfer remain unverified.
+
+Default passed1088 tests/6 skipped; Valinor970/10 skipped. Both passed13/13
+offline gates and GUI smoke. Existing layout clipping remains. Source, installer
+size/SHA and branch receipts were verified before feed promotion; see each
+release's notes for measured evidence and limits.
 
 ### Windows SmartScreen
 

@@ -1,101 +1,35 @@
-Publishing a SmartCuff release
-==============================
+# Publishing verified application updates
 
-Checklist. Follow it in order; step 5 is the one that makes the release visible
-to users, so nothing after step 5 should be able to fail.
+User 2026-10-06 (rev27v-followup-256): publish complete Default and Valinor
+applications from clean attributable source, preserving their distinct channels.
 
-1. Build
-   ------
-   From the development repo:
-       powershell -ExecutionPolicy Bypass -File installer\Build-Installer.ps1 -AllowUnsigned
+Commit the intended source changes first. Build in a clean checkout containing
+only reviewed source and release profiles. Keep operator recordings, live
+calibration, tokens and `.last_flash.json` out of that checkout.
 
-   `-AllowUnsigned` is intentional while the operator accepts Windows'
-   **Unknown publisher** warning. Omit it when a trusted Authenticode signing
-   identity is configured.
+```powershell
+powershell -ExecutionPolicy Bypass -File installer/Build-Installer.ps1 -AllowUnsigned
+powershell -ExecutionPolicy Bypass -File installer/Publish-Release.ps1 -AllowUnsigned -ValidateOnly
+powershell -ExecutionPolicy Bypass -File installer/Publish-Release.ps1 -AllowUnsigned -NotesFile <release-notes> -PromoteFeed
+```
 
-   Confirm installer/SmartCuff.iss AppVersion matches
-   gui/firmware_version.py APPLICATION_VERSION. Separately confirm its
-   FirmwareVersion matches EXPECTED_FIRMWARE_VERSION and the firmware's
-   FIRMWARE_VERSION. GUI-only installer releases intentionally advance the app
-   version without pretending the firmware changed.
+Use trusted Authenticode when available. The operator has explicitly accepted
+unsigned builds; both commands require `-AllowUnsigned`. On a first install,
+Windows SmartScreen may require **More info -> Run anyway** for the official
+`SmartCuff_Setup.exe` downloaded from `mmjazini/smartcuff-releases`.
 
-   Live gui/calibration/device_*_state.json files are local data, not Git source.
-   Reviewed source baselines live in installer/calibration_profiles. To ship
-   newer accepted profiles, pass -CalibrationProfilesDir <accepted-directory>;
-   the builder freezes and validates A-D plus any new E-H profiles and records
-   each file's size/SHA-256. Never stage, discard, or stash live calibration
-   just to clear a branch/build gate. Devices need their own accepted data.
+Build writes an ignored `.exe.build.json` receipt binding branch, clean commit,
+application version, firmware, size, SHA-256 and UTC build time. Publication
+refuses stale bytes or source, wrong channel, existing release tags and draft
+feed promotion. It downloads and verifies the published installer before
+updating the feed with GitHub's current content SHA. Default `v3.1.*` remains
+GitHub Latest; Valinor `v3.2.*` uses `version-valinor.json`. Never replace release
+bytes in place. If promotion fails after publication, the release remains
+available and the feed is unchanged; verify the release and perform a reviewed
+feed update instead of recreating it.
 
-2. Stage
-   -----
-   Keep the built file named SmartCuff_Setup.exe. Do not copy this large binary
-   into the Git repository; attach it to a GitHub Release.
-
-3. Checksums
-   ---------
-   From the development repository:
-       certutil -hashfile installer\SmartCuff_Setup.exe SHA256
-
-   Confirm that result matches installer\SmartCuff_Setup.exe.sha256 exactly.
-
-4. Release notes
-   -------------
-   Write releases/<version>/RELEASE_NOTES.md in this repository and use the
-   same text as the GitHub Release description.
-
-   While installers are unsigned, every GitHub Release description must tell
-   users that Windows can show **Windows protected your PC** and **Unknown
-   publisher**, then give the exact official-installer steps: select **More
-   info**, verify `SmartCuff_Setup.exe`, and select **Run anyway**. Also warn
-   users not to proceed with a differently named file or another download
-   source.
-
-   State plainly what changed in the CONTROL PATH, if anything. Users of this
-   device care about deflation behaviour and calibration handling far more than
-   about UI polish. If a previous release had a defect that mis-reported
-   pressure or mishandled a run, say so and set "mandatory": true in step 5.
-
-5. Publish release assets
-   ----------------------
-   Create the GitHub Release and upload SmartCuff_Setup.exe plus its `.sha256`
-   sidecar. Unsigned publication requires the explicit `-AllowUnsigned` switch
-   in `installer\Publish-Release.ps1`. Never replace an existing tag's bytes;
-   bump the version instead.
-
-6. Manifest
-   --------
-   Only after the assets exist, update `version.json` for Default or
-   `version-valinor.json` for Valinor: version, published, installer_url,
-   sha256, size_bytes, min_supported, notes_url, mandatory. Never point one
-   branch at the other branch's release family.
-
-   installer_url form:
-       https://github.com/mmjazini/smartcuff-releases/releases/download/<version>/SmartCuff_Setup.exe
-
-   Validate the JSON before committing. A malformed manifest should fail soft in
-   the client, but do not lean on that.
-
-7. Push
-   ----
-       git add -A && git commit -m "release <version>" && git push
-
-8. Verify as a user would
-   ----------------------
-   Fetch the manifest from the raw URL in a browser or with curl, download the
-   installer from installer_url, and check the hash matches. Do this from a
-   machine that is NOT logged in to GitHub -- that is the only way to prove the
-   channel really is public and no credential is involved.
-
-Things not to do
-----------------
-* Do not put a token, key, or password in the installer, the manifest, or this
-  repo. The whole point of the split is that the client needs no secret.
-* Do not commit the installer binary to Git. GitHub Release assets are the
-  supported large-file download path.
-* Do not force-push or rewrite history here. Clients may be mid-download.
-* Do not delete an old release directory. min_supported controls what can
-  upgrade in place; removing artifacts breaks users who are behind.
-* Do not publish a build that has not been flashed and soaked on hardware. The
-  development repo's AGENTS.md requires a 10-minute soak for any firmware
-  correction, and a release is the last place to discover a control-path
-  regression.
+Accepted profile inputs remain `installer/calibration_profiles`; newer reviewed
+profiles require explicit `-CalibrationProfilesDir`. Live `gui/calibration`
+snapshots stay local and ignored. Preserve the previous installer separately
+when retaining historical local outputs, and record build receipts and download
+verification evidence under `build/release_verification`.
