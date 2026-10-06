@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.53",
+  "version": "v3.2.54",
   "published": "2026-10-06",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.53/SmartCuff_Setup.exe",
-  "sha256": "57e8b9e801a7d101ee5f66842bf250c6d71edb456f6d58a995003fe459563a7e",
-  "size_bytes": 5754999,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.54/SmartCuff_Setup.exe",
+  "sha256": "e249fa6a7a05b691c8b1e65ff0655b11903029311cfed8c59acff6d49418c732",
+  "size_bytes": 5757859,
   "min_supported": null,
-  "notes": "# Smart Cuff Valinor v3.2.53\r\n\r\nFlow calibration consumes every raw Ch2 sample on the actual NI-DAQ clock.\r\nNominal flow=2*(V-V0) L/min; area times1000/60 gives mL. K=known mL/nominal mL:\r\n300/260=1.153846, dimensionless. Existing coefficients are not rescaled. The\r\nGUI shows measured volume, K and stroke selection. Cancel preserves stored\r\ncalibration; invalid/one-sided fits and DAQ discontinuities cannot be applied.\r\nSET/save/device readback precedes snapshot/fleet capture. Baseline, full-precision\r\nstrokes, partial traces and selection masks are archived. Physical syringe\r\naccuracy remains to be measured; this release does not push example gains.\r\n\r\nPublisher binds installer bytes to a clean source/firmware/version receipt and\r\nverifies downloaded size/SHA before the separate Valinor feed advances. Max80-220\r\nGUI/standalone gauge control and firmware rev27v-gauge-34 are unchanged. Reviewed\r\nprofile inputs are unchanged; live calibration snapshots remain local/ignored.\r\n\r\nThe official online installer is unsigned and first setup needs internet.\r\nWindows may show Windows protected your PC and Unknown publisher. For official\r\nSmartCuff_Setup.exe from mmjazini/smartcuff-releases, choose **More info -> Run\r\nanyway**. Smart Cuff opens automatically after successful setup and supports\r\noffline operation after installation. NI-DAQmx is installed separately.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.53",
+  "notes": "Cal 3 now completes its five-second resting countdown reliably when the syringe stops. Isolated NI-DAQ sample noise no longer repeatedly restarts the timer; sustained flow or renewed movement restarts all five seconds. The live graph shows the actual rest band with solid lines and the stroke-start threshold with dashed lines.\n\nFlow calibration always fits independent Kp and Kn from each direction's mean whole-stroke nominal volume. Every raw flow sample remains integrated on the NI-DAQ clock. Stored calibration is preserved until a complete reviewed result passes the existing save and read-back gates.\n\nValidated by recorded-trace replay, 500 Hz noisy-tail and renewed-motion tests, volume/timebase checks, and full offline application checks. Valinor firmware and Max 80 through Max 220 presets are unchanged. Physical syringe accuracy requires a new operator calibration.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.54",
   "mandatory": false,
   "channel": "valinor"
 }
