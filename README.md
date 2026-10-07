@@ -6,21 +6,21 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.254/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.255/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.254`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.254)
+Current Default release: [`v3.1.255`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.255)
 
-- Installer size: `223,604,951` bytes
-- SHA-256: `d1d8c17ba9d6bba53048924edf53800dba6fb08227b964b42a4e547fc45af0d0`
-- Bundled firmware: `rev27v-followup-236`
+- Installer size: `223,608,133` bytes
+- SHA-256: `f4e9c8f2e94e94da1b4905c21db4fb24017d67d73738ed7ef33d312feee20117`
+- Bundled firmware: `rev27v-followup-237`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.55/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.56/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.55`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.55)
+Current Valinor release: [`v3.2.56`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.56)
 
-- Installer size: `5,760,162` bytes
-- SHA-256: `5023e305501aa3459d65ca6be00c923607bf75e1e3a488036f1f27bfcd55dda3`
+- Installer size: `5,772,501` bytes
+- SHA-256: `c7a8b2e6b239539deb0f84c239c8c8772746d5866c889a880544e7b53dab2170`
 - Bundled firmware: `rev27v-gauge-34`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
@@ -28,32 +28,48 @@ Default includes its offline Python/Arduino runtime. Valinor is a small
 online installer; first-time setup needs internet. Both GUIs support offline
 operation after installation; NI-DAQmx is installed separately.
 
-Both releases retain the Cal 3 five-second rest fix and independent Kp/Kn
-calibration fits. NI-DAQ pressure and flow share native sample timing;
-Arduino receipt timestamps are captured before GUI delivery. The last-sweep
-diagnostic reports completed-cycle amplitude, phase lag, bias, RMSE and
-emitted commands, with unresolved phase identified for flat responses.
+The installed Default update was byte-verified and retained all four existing
+local calibration hashes. Its protected firmware gate restored and verified
+Device D values. The installed ten-minute seed-213 soak passed seven cycles
+with zero flags, 100% telemetry delivery, zero pump reversals and valve
+reversals at or below 0.158/s (gate 0.5/s). The operational launcher confirmed
+firmware 237 and opened the GUI. Final Valinor layout and mock smoke passed.
 
-Default Arm/Wrist CVP gain pump authority for rises below 1 mmHg/s and use
-smooth regional PID gain transitions. The session-only pulse setting
-rejects the simulator frequency from actuator feedback while retaining raw
-pressure, voltage and safety inputs. At the default 50 bpm, stop the simulator
-and apply 0 bpm before using the waveform generator. Valinor firmware and its
-Max-preset control profile are unchanged.
+Flow calibration uses a 2.9-3.1 V rest band for five continuous seconds on NI
+sample time. The GUI has clearer workspace navigation, collapsible sequence
+details and connection/event panels, and pulse-envelope diagnostics with pause
+and figure export. Live and offline BPF defaults use the same causal NI-voltage
+filter; alternate zero-phase pressure filtering is explicitly labelled.
+NI time stays the reference. Only Arduino voltage timing may align to it.
 
-Default passed 1,119 tests with six skipped. Valinor's suite had 988 passing,
-ten skipped and two failures; the placeholder regression was corrected and
-passed focused checks, and the Qt STOP subprocess passed its isolated rerun.
-Both branches passed offline gates, layout checks and GUI smoke.
-Device D completed a protected flash/restore and ten-minute seed-213 CVP soak:
-eight cycles, zero flags, 100% measured delivery, and valve reversals
-0.141-0.270/s against a 0.5/s gate. Standalone Arm/Wrist runs also completed.
-The historical 1.52-second telemetry blackout is not claimed resolved for
-all runs. Pulse measurements show little actuator response at 50 bpm;
-unchanged pneumatic pulse amplitude and shape need a matched passive
-same-pressure comparison. The live NI backlog check retained all 9,960
-samples on three channels. Source, size and SHA-256 were verified before
-promoting both application feeds.
+Default Smart Const accepts deflation oscillogram peaks from 30-140 mmHg and
+reinflates to peak +10. Regular remains 80 mmHg nominal / 85 ceiling. Arm/Wrist
+CVP gain pump authority below 1 mmHg/s and smooth regional transitions. Raw
+pressure and safety checks remain available while pulse-aware feedback limits
+controller response at the simulator frequency. Valinor keeps its Max 80-220
+menu, gauge 34 firmware and 3 mmHg/s SysID calibration slope.
+
+Default offline preflight passed 13/13 gates with 1,146 tests passed and six
+skipped; Valinor passed 13/13 with 1,012 passed and ten skipped. Focused GUI,
+protocol parity, layout and smoke checks supplement those suites.
+
+Device D completed a protected firmware 237 flash/readback and ten-minute
+seed-213 soak: six cycles passed, zero flags, 100% telemetry delivery, and
+valve reversals 0.043-0.276/s against a 0.5/s gate. All five actual GUI protocols
+also completed two cycles with the 50 bpm, 1.25 mL simulator. Four had 100%
+delivery; High Max had 99.992% (one missing sequence). No candidate raw-envelope
+steps were detected at 30/80 mmHg range crossings. Standalone Smart Const
+peak +10 was verified. NI timestamps had no backtracks; observed Arduino
+voltage residual lag was approximately 33-57 ms.
+
+SysID runs 0092/0093 failed high-pressure-decay / HIGH-band quality gates;
+the GUI blocked pushes and retained known-good Device D calibration and
+control values. This is not a 1,000-device manufacturing-yield validation.
+Unchanged pneumatic pulse amplitude and shape need a matched passive run at
+the same pressure. The historical 1.52-second telemetry blackout is not
+claimed resolved across all runs. Default simulator findings are not Valinor
+hardware validation. Release assets were downloaded and verified by size and
+SHA-256 before the application feeds were promoted.
 
 ### Windows SmartScreen
 

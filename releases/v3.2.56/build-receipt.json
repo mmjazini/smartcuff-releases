@@ -1,0 +1,11 @@
+{
+  "built_utc": "2026-10-07T15:38:19.9865612Z",
+  "commit": "5d073070a1eb53e9f404607d47e09dd32103fd3d",
+  "sha256": "c7a8b2e6b239539deb0f84c239c8c8772746d5866c889a880544e7b53dab2170",
+  "tree_state": "clean",
+  "size_bytes": 5772501,
+  "branch": "valinor",
+  "schema": 1,
+  "version": "v3.2.56",
+  "firmware": "rev27v-gauge-34"
+}
