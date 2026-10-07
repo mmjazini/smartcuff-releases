@@ -1,0 +1,11 @@
+{
+  "sha256": "d1d8c17ba9d6bba53048924edf53800dba6fb08227b964b42a4e547fc45af0d0",
+  "tree_state": "clean",
+  "version": "v3.1.254",
+  "schema": 1,
+  "firmware": "rev27v-followup-236",
+  "built_utc": "2026-10-07T01:24:10.3418628Z",
+  "commit": "bca096497c5ee71189da41642da39dc5660f8c37",
+  "branch": "default",
+  "size_bytes": 223604951
+}

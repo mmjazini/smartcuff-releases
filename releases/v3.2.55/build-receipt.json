@@ -1,0 +1,11 @@
+{
+  "size_bytes": 5760162,
+  "branch": "valinor",
+  "version": "v3.2.55",
+  "tree_state": "clean",
+  "commit": "61311078e4e507a2726e0cf02ee91dc1baf23c4f",
+  "sha256": "5023e305501aa3459d65ca6be00c923607bf75e1e3a488036f1f27bfcd55dda3",
+  "schema": 1,
+  "built_utc": "2026-10-07T01:09:28.7967723Z",
+  "firmware": "rev27v-gauge-34"
+}

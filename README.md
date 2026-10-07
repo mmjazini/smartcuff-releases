@@ -6,21 +6,21 @@ University of Pittsburgh CHTL (Cardiovascular Monitoring Research Lab).
 
 ## Download
 
-**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.253/SmartCuff_Setup.exe)**
+**[Download the latest verified Default Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.254/SmartCuff_Setup.exe)**
 
-Current Default release: [`v3.1.253`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.253)
+Current Default release: [`v3.1.254`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.254)
 
-- Installer size: `223,561,079` bytes
-- SHA-256: `d722aecc02565cce633cf2824e4b887d752b750798f8c46ee344830f4f996ca1`
-- Bundled firmware: `rev27v-followup-234`
+- Installer size: `223,604,951` bytes
+- SHA-256: `d1d8c17ba9d6bba53048924edf53800dba6fb08227b964b42a4e547fc45af0d0`
+- Bundled firmware: `rev27v-followup-236`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
-**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.54/SmartCuff_Setup.exe)**
+**[Download the latest verified Valinor Smart Cuff installer](https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.55/SmartCuff_Setup.exe)**
 
-Current Valinor release: [`v3.2.54`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.54)
+Current Valinor release: [`v3.2.55`](https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.55)
 
-- Installer size: `5,757,859` bytes
-- SHA-256: `e249fa6a7a05b691c8b1e65ff0655b11903029311cfed8c59acff6d49418c732`
+- Installer size: `5,760,162` bytes
+- SHA-256: `5023e305501aa3459d65ca6be00c923607bf75e1e3a488036f1f27bfcd55dda3`
 - Bundled firmware: `rev27v-gauge-34`
 - Signature: unsigned; Windows displays **Unknown publisher**
 
@@ -28,18 +28,32 @@ Default includes its offline Python/Arduino runtime. Valinor is a small
 online installer; first-time setup needs internet. Both GUIs support offline
 operation after installation; NI-DAQmx is installed separately.
 
-Cal 3 now completes its five-second resting countdown despite isolated
-NI-DAQ sample noise. Sustained flow or renewed movement restarts all five
-seconds. Solid lines show the actual rest band; dashed lines show stroke start.
-The RMS detector never filters or gates the raw native-clock volume integral.
-Both flow gains, Kp and Kn, always fit independently from their direction's
-mean whole-stroke nominal volume. Saved calibration remains protected.
+Both releases retain the Cal 3 five-second rest fix and independent Kp/Kn
+calibration fits. NI-DAQ pressure and flow share native sample timing;
+Arduino receipt timestamps are captured before GUI delivery. The last-sweep
+diagnostic reports completed-cycle amplitude, phase lag, bias, RMSE and
+emitted commands, with unresolved phase identified for flat responses.
 
-Default passed 1095 tests/6 skipped; Valinor 977/10 skipped. Both passed all
-13 offline gates and GUI smoke. Recorded replay completed both previously
-stalled strokes. Physical syringe accuracy still needs a fresh operator
-calibration. Firmware and preset controls are unchanged in these updates.
-Source, size and SHA-256 were verified before promoting the feeds.
+Default Arm/Wrist CVP gain pump authority for rises below 1 mmHg/s and use
+smooth regional PID gain transitions. The session-only pulse setting
+rejects the simulator frequency from actuator feedback while retaining raw
+pressure, voltage and safety inputs. At the default 50 bpm, stop the simulator
+and apply 0 bpm before using the waveform generator. Valinor firmware and its
+Max-preset control profile are unchanged.
+
+Default passed 1,119 tests with six skipped. Valinor's suite had 988 passing,
+ten skipped and two failures; the placeholder regression was corrected and
+passed focused checks, and the Qt STOP subprocess passed its isolated rerun.
+Both branches passed offline gates, layout checks and GUI smoke.
+Device D completed a protected flash/restore and ten-minute seed-213 CVP soak:
+eight cycles, zero flags, 100% measured delivery, and valve reversals
+0.141-0.270/s against a 0.5/s gate. Standalone Arm/Wrist runs also completed.
+The historical 1.52-second telemetry blackout is not claimed resolved for
+all runs. Pulse measurements show little actuator response at 50 bpm;
+unchanged pneumatic pulse amplitude and shape need a matched passive
+same-pressure comparison. The live NI backlog check retained all 9,960
+samples on three channels. Source, size and SHA-256 were verified before
+promoting both application feeds.
 
 ### Windows SmartScreen
 
