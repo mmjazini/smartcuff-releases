@@ -1,31 +1,31 @@
 {
-    "_comment":  [
-                     "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
-                     "public HTTPS -- there is deliberately NO credential in the client. See",
-                     "README.md for why an embedded token was rejected.",
-                     "",
-                     "This file is the ONLY thing the updater needs to read. Keep it small and",
-                     "keep it valid JSON: a malformed manifest must fail soft in the client, but",
-                     "there is no reason to rely on that.",
-                     "",
-                     "The installer is a GitHub Release asset rather than a repository blob.",
-                     "Keep installer_url version-specific: an existing manifest must always",
-                     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
-                 ],
-    "schema":  1,
-    "version":  "v3.1.269",
-    "published":  "2026-10-07",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.269/SmartCuff_Setup.exe",
-    "sha256":  "6904262d117ae6d5dd299bd0ba2754964a3225c91bb1f252a383ee7650deb4ca",
-    "size_bytes":  223630367,
-    "min_supported":  null,
-    "notes":  "Smart Cuff Default v3.1.269\r\n\r\nThe pump diagnostic measures net pressure gain on acquisition time, including acceleration, separately from local valve identification. It supplies no valve gain or PID value. SysID now distinguishes an incomplete scan, a quality-rejected comparison and an accepted measured result. Fallback or synthesized gains do not appear as measured and cannot supply PID. The steady seven-phase view includes vented recovery; recovery consumes every acquired frame instead of restarting falsely when GUI polling skips frames.\r\n\r\nPlot controls stay above the first plot after font/style/resize changes. Tabs and events/connections/device controls share one header; RUN is steady with meaningful phase/break status. Rounded OLED header and progress boxes use the device framebuffer mirrored in the GUI. Default retains its five presets and GUI/standalone parity.\r\n\r\nLive NI BPF matches offline zero-phase morphology with an explicit approximately 8.2-second display delay. Pulse-envelope and tracking diagnostics report measured cadence, amplitude, phase lag, error and limitations. NI timestamps remain unchanged. Flow zero uses the 2.9-3.1 V band for five continuous NI seconds. CVP inflation assistance below 1 mmHg/s and smooth valve/tail transitions remain included. Smart Const finds a coherent 30-140 mmHg deflation oscillogram peak and reinflates to peak+10, holding peak+5.\r\n\r\nValidation: all five actual GUI presets completed both pulse-enabled cycles with 100% delivery. Arm/Wrist adjacent tail steps were 0.07/0.09 duty percentage points with no detected envelope steps at 10/15/30 mmHg. NI retained 705,650 native samples, zero backtracks. The final firmware-242 ten-minute seed-213 soak completed six cycles with no flags, zero significant pump/valve deflation reversals and 100% delivery. Smart MAP properly rejected pulses-off soak traces. Regular/High rapid-tail envelope windows remain insufficient near 10 mmHg; a matched passive baseline and final two-cuff transfer validation are not established. These measurements do not establish 1000-device yield.\r\n\r\nFirmware rev27v-followup-242. Safety thresholds and branch control profiles are unchanged by display work. Protected flashing snapshots/restores complete device state. The installer includes app-local Python and Arduino runtime; NI-DAQmx is optional and installed separately. Accepted calibration submissions remain queued until individual Issues-only enrollment and maintainer review. No shared credential is bundled, and previous calibration JSON remains archived.\r\n\r\n\r\nFinal SysID provenance correction: cross-band and missing-band gain replacements are recorded as synthesized, with raw fits preserved. Final acceptance runs after all replacements and rejects synthesized gains or argmax open boundaries. The GUI shows diagnostic versus replacement values separately and cannot offer rejected PID or replace the known-good snapshot.\r\n\r\nLarger-cuff109 completed all seven phases, but LOW raw K approximately0.124 was replaced by MID0.713 and LOW never crossed the open threshold. Its corrected verdict is SUSPECT. Original archive, native NI/serial and corrected replay are retained; no profile was adopted. This result does not establish cuff transfer or manufacturing yield.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.269",
-    "mandatory":  false,
-    "channel":  "stable",
-    "_channel_note":  [
-                          "stable is the only channel today. If a test channel is ever added, publish",
-                          "a second manifest (version-beta.json) rather than adding branching logic to",
-                          "the client -- the client stays a dumb fetch-and-compare."
-                      ]
+  "_comment": [
+    "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
+    "public HTTPS -- there is deliberately NO credential in the client. See",
+    "README.md for why an embedded token was rejected.",
+    "",
+    "This file is the ONLY thing the updater needs to read. Keep it small and",
+    "keep it valid JSON: a malformed manifest must fail soft in the client, but",
+    "there is no reason to rely on that.",
+    "",
+    "The installer is a GitHub Release asset rather than a repository blob.",
+    "Keep installer_url version-specific: an existing manifest must always",
+    "resolve to the exact immutable bytes whose size and SHA-256 it declares."
+  ],
+  "schema": 1,
+  "version": "v3.1.270",
+  "published": "2026-10-07",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.270/SmartCuff_Setup.exe",
+  "sha256": "8321e4dababfcfe1dfc9db66da63033d9677a0cf373e75e0fa105c775985ad12",
+  "size_bytes": 223642184,
+  "min_supported": null,
+  "notes": "Smart Cuff Default v3.1.270\r\n\r\nThe pump diagnostic measures net pressure gain on acquisition time, including acceleration, separately from local valve identification. It supplies no valve gain or PID value. SysID now distinguishes an incomplete scan, a quality-rejected comparison and an accepted measured result. Fallback or synthesized gains do not appear as measured and cannot supply PID. The steady seven-phase view includes vented recovery; recovery consumes every acquired frame instead of restarting falsely when GUI polling skips frames.\r\n\r\nPlot controls stay above the first plot after font/style/resize changes. Tabs and events/connections/device controls share one header; RUN is steady with meaningful phase/break status. Rounded OLED header and progress boxes use the device framebuffer mirrored in the GUI. Default retains its five presets and GUI/standalone parity.\r\n\r\nLive NI BPF matches offline zero-phase morphology with an explicit approximately 8.2-second display delay. Pulse-envelope and tracking diagnostics report measured cadence, amplitude, phase lag, error and limitations. NI timestamps remain unchanged. Flow zero uses the 2.9-3.1 V band for five continuous NI seconds. CVP inflation assistance below 1 mmHg/s and smooth valve/tail transitions remain included. Smart Const finds a coherent 30-140 mmHg deflation oscillogram peak and reinflates to peak+10, holding peak+5.\r\n\r\nValidation: all five actual GUI presets completed both pulse-enabled cycles with 100% delivery. Arm/Wrist adjacent tail steps were 0.07/0.09 duty percentage points with no detected envelope steps at 10/15/30 mmHg. NI retained 705,650 native samples, zero backtracks. The final firmware-242 ten-minute seed-213 soak completed six cycles with no flags, zero significant pump/valve deflation reversals and 100% delivery. Smart MAP properly rejected pulses-off soak traces. Regular/High rapid-tail envelope windows remain insufficient near 10 mmHg; a matched passive baseline and final two-cuff transfer validation are not established. These measurements do not establish 1000-device yield.\r\n\r\nFirmware rev27v-followup-242. Safety thresholds and branch control profiles are unchanged by display work. Protected flashing snapshots/restores complete device state. The installer includes app-local Python and Arduino runtime; NI-DAQmx is optional and installed separately. Accepted calibration submissions remain queued until individual Issues-only enrollment and maintainer review. No shared credential is bundled, and previous calibration JSON remains archived.\r\n\r\n\r\nFinal SysID provenance correction: cross-band and missing-band gain replacements are recorded as synthesized, with raw fits preserved. Final acceptance runs after all replacements and rejects synthesized gains or argmax open boundaries. The GUI shows diagnostic versus replacement values separately and cannot offer rejected PID or replace the known-good snapshot.\r\n\r\nLarger-cuff109 completed all seven phases, but LOW raw K approximately0.124 was replaced by MID0.713 and LOW never crossed the open threshold. Its corrected verdict is SUSPECT. Original archive, native NI/serial and corrected replay are retained; no profile was adopted. This result does not establish cuff transfer or manufacturing yield.\r\n\n\nOffline BPF comparison instructions now point to NI Ch1 zero-phase (V; live shape), the same mode as delayed live BPF. Causal replay remains separately labeled. GitHub feed publication writes BOM-free UTF-8 on Windows PowerShell and PowerShell 7, verified by real publisher transaction tests. Firmware is unchanged from the protected-flashed and soaked version.\n\nInstalled-launcher return validation: protected Default242 alignment preserved calibration, FF/K, regional limits and both PID sets. The seed-213 ten-minute return soak passed all six cycle/reversal-rate gates with 28,659/28,659 frames (100% delivery). Arm/Wrist adjacent tail duty steps were 0.06/0.07 percentage points. Regular had two valve reversals (0.048/s, below the 0.5/s gate); all other valve and pump reversal counts were zero. A subsequent read-only check proved fresh IDLE, pump off and 0 mmHg. These results are bench evidence, not clinical or fleet qualification.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.270",
+  "mandatory": false,
+  "channel": "stable",
+  "_channel_note": [
+    "stable is the only channel today. If a test channel is ever added, publish",
+    "a second manifest (version-beta.json) rather than adding branching logic to",
+    "the client -- the client stays a dumb fetch-and-compare."
+  ]
 }
