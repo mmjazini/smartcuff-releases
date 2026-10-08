@@ -5,14 +5,14 @@
                      "The installed client needs no GitHub credential and fails silently offline."
                  ],
     "schema":  1,
-    "version":  "v3.2.77",
+    "version":  "v3.2.79",
     "published":  "2026-10-08",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.77/SmartCuff_Setup.exe",
-    "sha256":  "fb3a2db3a71b1f22a844b19a9706103f344df30fd9043216a31e8d59c887b955",
-    "size_bytes":  216172577,
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.79/SmartCuff_Setup.exe",
+    "sha256":  "0aa30dbcae5c961e5d8c9343456610891cb0d7093aaf23d4ef94c7ae3b874cb6",
+    "size_bytes":  216135672,
     "min_supported":  null,
-    "notes":  "Smart Cuff v3.2.77 prevents a busy GUI from starving SysID\u0027s pressure measurements and acknowledgments.\r\n\r\nIn the archived LOW probe, serial parsing had 39 samples covering 0.790 seconds inside the original 0.800-second interval, but queued GUI delivery supplied SysID only ten samples covering 0.180 seconds. Replaying the original serial bytes through the new direct receiver passes the existing estimator. The incomplete scan remains rejected and is not adopted as calibration.\r\n\r\nBoth manual and retry SysID starts attach thread-safe measurement and acknowledgment receivers directly to serial input. Display updates and actuator commands retain their existing paths. Cancellation detaches the receivers; the GUI fallback cannot double-deliver samples. Fixed probe fits exclude later frames and cadence context. Probe dwell, minimum acquisition duration, pulse separation, uncertainty gates and acceptance requirements are unchanged.\r\n\r\nReal Qt regressions include an unserviced display queue, a complete fixed-duration probe, exact response payloads, safety-event refusal, detach/restart and future-sample exclusion. Both branch release suites, layout, preset parity and mocked GUI smoke are checked. Firmware, standalone control and accepted device profiles are unchanged.\r\n\r\nCOM6 still times out before telemetry, so the independent larger-cuff repeat and installed hardware alignment remain unverified. Complete small-cuff data, matched simulator pulse baseline and real second-PC fleet adoption remain pending. This release does not qualify cross-cuff generalization or a 1,000-device rollout.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.77",
+    "notes":  "Smart Cuff v3.2.79 organizes SysID into scan setup, run status, measured results and saved runs. PID gains share Kp/Ki/Kd headings, with separate timing/output, feedback and Apply cards. Buttons align and the report grows with content before scrolling.\r\n\r\nThe complete startup logo now has a small firmware version and stable release date below it. Startup remains one second.\r\n\r\nAll OLED screens retain a two-pixel guard around every edge. Rounded headers/frames and lower text move inward; long complete labels can use the smaller font. Both transfer paths and the authoritative GUI mirror retain the same inset framebuffer.\r\n\r\nControl gains, equations, safety thresholds, calibration, timing and branch-specific presets are unchanged. Default retains its automatic pulse-preservation control; Valinor retains its Max80â€“220 menu. Independent SysID HIGH repeat disagreement remains rejected and the saved tuning is retained. This release does not claim cross-cuff, pulse-preservation or population qualification.\r\n\r\nValidation and protected flash/readback/ten-minute seed-213 soak evidence are archived in gui/recordings/followup280_delivery. Installers use the existing verified branch feed and protected firmware-alignment path.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.79",
     "mandatory":  false,
     "channel":  "valinor"
 }
