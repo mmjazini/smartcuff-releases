@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.80",
+  "version": "v3.2.81",
   "published": "2026-10-08",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.80/SmartCuff_Setup.exe",
-  "sha256": "f31fed449a4237bd557de0898feb42760328a170039d7f6335dc20da6d9f91e1",
-  "size_bytes": 216136707,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.81/SmartCuff_Setup.exe",
+  "sha256": "47d97dde73ceace62486fff09557820d298fbb3816e34fb184d8be8e027fb3c3",
+  "size_bytes": 216160709,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.80: longer complete-logo startup page.\r\n\r\nThe original one-second divider/reveal/signal-lock animation keeps its original speed. The complete logo page then remains visible for three additional seconds, with watchdog servicing throughout. The OLED firmware number is derived from the actual firmware revision (v3.2.38); future revision changes update the displayed number automatically. The release date uses MM/DD/YYYY (10/08/2026).\r\n\r\nThe complete logo, footer and two-pixel OLED margin remain. Existing pressure control, safety, calibration and branch-specific protocols are unchanged. Saved calibration history is retained.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.80",
+  "notes": "Smart Cuff v3.2.81: Simulator queues with complete trial recordings.\r\n\r\nThe Simulator tab verifies the ProSim 8 mini-USB DEVICE connection, previews large\r\nBP/heart-rate/volume/envelope-shift queues, and runs the selected product preset\r\nonce per trial. Defaults are 120/80 mmHg, 72 bpm, 1 mL. MAP is calculated. Adult\r\nand Neonatal waves require confirmation on the ProSim screen. Cuff, mandrel and\r\nnotes accompany dated setting-specific Arduino, native NI and ProSim files.\r\nEach trial is followed by a verified vented 30-second break. Existing Bench tools\r\nremain available. STOP and recording/link failures retain partial data and stop\r\nthe queue. Native NI time remains the reference; calibration history is retained.\n\nValidation: 1,269 source tests passed (5 skipped); all 13 offline gates passed.\nThe packaged GUI opened with its bundled Python without exceptions. Valinor's\nMax 80-220 menu and firmware rev27v-gauge-38 control profile are unchanged.\nThe shared ProSim command order measured about 72 bpm for a 72 bpm request in\ntwo Default Arm CVP trials. This is a limited integration check, not qualification\nof every simulator setting or the Valinor pressure range.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.81",
   "mandatory": false,
   "channel": "valinor"
 }
