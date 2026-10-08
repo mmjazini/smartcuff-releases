@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.79",
+  "version": "v3.2.80",
   "published": "2026-10-08",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.79/SmartCuff_Setup.exe",
-  "sha256": "0aa30dbcae5c961e5d8c9343456610891cb0d7093aaf23d4ef94c7ae3b874cb6",
-  "size_bytes": 216135672,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.80/SmartCuff_Setup.exe",
+  "sha256": "f31fed449a4237bd557de0898feb42760328a170039d7f6335dc20da6d9f91e1",
+  "size_bytes": 216136707,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.79 organizes SysID into scan setup, run status, measured results and saved runs. PID gains share Kp/Ki/Kd headings, with separate timing/output, feedback and Apply cards. Buttons align and the report grows with content before scrolling.\r\n\r\nThe complete startup logo now has a small firmware version and stable release date below it. Startup remains one second.\r\n\r\nAll OLED screens retain a two-pixel guard around every edge. Rounded headers/frames and lower text move inward; long complete labels can use the smaller font. Both transfer paths and the authoritative GUI mirror retain the same inset framebuffer.\r\n\r\nControl gains, equations, safety thresholds, calibration, timing and branch-specific presets are unchanged. Default retains its automatic pulse-preservation control; Valinor retains its Max80–220 menu. Independent SysID HIGH repeat disagreement remains rejected and the saved tuning is retained. This release does not claim cross-cuff, pulse-preservation or population qualification.\r\n\r\nValidation and protected flash/readback/ten-minute seed-213 soak evidence are archived in gui/recordings/followup280_delivery. Installers use the existing verified branch feed and protected firmware-alignment path.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.79",
+  "notes": "Smart Cuff v3.2.80: longer complete-logo startup page.\r\n\r\nThe original one-second divider/reveal/signal-lock animation keeps its original speed. The complete logo page then remains visible for three additional seconds, with watchdog servicing throughout. The OLED firmware number is derived from the actual firmware revision (v3.2.38); future revision changes update the displayed number automatically. The release date uses MM/DD/YYYY (10/08/2026).\r\n\r\nThe complete logo, footer and two-pixel OLED margin remain. Existing pressure control, safety, calibration and branch-specific protocols are unchanged. Saved calibration history is retained.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.80",
   "mandatory": false,
   "channel": "valinor"
 }
