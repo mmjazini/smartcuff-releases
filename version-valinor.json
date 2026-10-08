@@ -5,14 +5,14 @@
                      "The installed client needs no GitHub credential and fails silently offline."
                  ],
     "schema":  1,
-    "version":  "v3.2.75",
+    "version":  "v3.2.76",
     "published":  "2026-10-08",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.75/SmartCuff_Setup.exe",
-    "sha256":  "ed366a586bafbf0afedfcd35abc5b7d2966f2d86f69ba4be3bff6a68e8d32f04",
-    "size_bytes":  216147582,
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.76/SmartCuff_Setup.exe",
+    "sha256":  "ce9815fa9603d684d67337a265949f10288d6b947398828dfa725ca7af81330b",
+    "size_bytes":  216131524,
     "min_supported":  null,
-    "notes":  "Smart Cuff v3.2.75 improves native NI acquisition and measured diagnostics.\r\n\r\nNI backlog draining retains every channel in mirrored native recordings while preserving acquisition timestamps and the existing display cadence. The loaded Qt repeat retained 56,090 samples without gaps: native p95/max 40/78 ms and GUI p95/max 92/253 ms. A first probe had an unexplained 10.9-second pause; that failure remains recorded.\r\n\r\nSinusoid diagnostics show measured amplitude, phase, error and actual actuator duty, and save traces even when identification is incomplete. Preparation now allows up to 60 seconds. The larger-cuff sweep completed but did not reproduce the full requested bandwidth: amplitude was 5.37 mmHg at 0.15 Hz and about 0.13 mmHg near 1.94 Hz for a requested 10 mmHg. Weak or noisy phase estimates are omitted.\r\n\r\nIndependent SysID comparison recomputes measurement gates and gains; it never copies tuning between cuffs. Native worker shutdown and pre-import process logs improve retention of stop, fault and exit evidence.\r\n\r\nThe branch\u0027s firmware and accepted calibration are unchanged. Pulse-preservation baseline testing awaits simulator pulses; real sharing awaits individual enrollment and a second PC. The current A-H identity scheme does not qualify a 1,000-device rollout. These are engineering measurements, not production or clinical certification.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.75",
+    "notes":  "Smart Cuff v3.2.76 keeps Connect responsive when Windows cannot finish opening the Arduino port.\r\n\r\nSerial opening and buffer reset run outside Qt and the serial mutex with a five-second deadline. Timeout or window close discards late connections and keeps hardware controls locked; pending opens block flash and application installation. All GUI reconnects share the firmware verification handshake. Startup and device snapshot/restore use bounded serial opening, preserving the protected firmware transaction.\r\n\r\nSysID now reports short acquisition span, duplicate/reset timestamps and acquisition gaps separately. The rejected run\u0027s ten continuous samples covered only 0.180 seconds; this no longer appears as a generic clock discontinuity. Minimum duration, pulse separation, uncertainty and valve dwell gates are unchanged.\r\n\r\nBoth-branch fault-injection and release tests cover stalled opening, Qt heartbeat, late handles and normal connection. This update cannot repair a hung Windows USB driver. Bench repeats require a responding port; complete small-cuff data, matched pulse baseline and real second-PC fleet adoption remain pending. The measured sinusoid sweep still attenuates severely at higher frequencies. This release does not qualify a 1,000-device rollout.\r\n\r\nTransient Windows sharing errors during atomic profile save are retried for up to 350 ms. Permanent locks preserve the prior profile and archive.\n\nThe automated GUI smoke harness now skips the calibration-folder button, preventing unwanted Explorer windows during verification.\n\r\nFirmware, clinical preset control and accepted calibration values are unchanged.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.76",
     "mandatory":  false,
     "channel":  "valinor"
 }
