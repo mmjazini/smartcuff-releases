@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.90",
+  "version": "v3.2.92",
   "published": "2026-10-09",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.90/SmartCuff_Setup.exe",
-  "sha256": "6e17ab758012f75c1dcb7d61d0e546163ed8af99ca5bd79f8c003c436eb659bd",
-  "size_bytes": 216196265,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.92/SmartCuff_Setup.exe",
+  "sha256": "b75e01c1c20f963c9ffbef6ac33646c2b109fffb9cb102addc1c3ffbb939976f",
+  "size_bytes": 216179258,
   "min_supported": null,
-  "notes": "Simulator settings and results now have separate scrollable views, a collapsible USB/cuff setup guide and persistent progress, Start/STOP, recordings folder and MAP scatter controls. Keep the existing bench tools, paired BP lists, green/red outcomes, one-cycle recordings and 30-second breaks.\n\nThe settings/queue height adapts to short windows, keeping trial actions visible above the legacy tools.\n\nThe read-only MAP scatter can load completed Smart Const measurements recorded on Default and excludes fallback holds. It labels reference MAP as calculated from simulator settings.\n\nValinor retains its Max80 through Max220 menu, standalone/GUI parity and unchanged rev27v-gauge-38 firmware and control profile. Focused Simulator/BPF/calibration-isolation tests, legacy checks, layout and mock GUI smoke passed. Calibration profiles and prior records are preserved.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.90",
+  "notes": "Pressure and oscillations are now recorded and reported in mmHg; signed flow is in L/min. Original volts and native acquisition times are retained. Missing calibration is marked unavailable.\n\nSimulator sweeps can run multiple selected Max targets for each settings combination. Each Max preset runs one cycle per trial with a 30-second vented break. Preview, settings CSV imports/exports, filenames and results identify each trial's protocol.\n\nEach trial gains a simple measurements CSV and a four-panel overview at the front of its PDF: pressure, pulse/envelope, flow, and pump/valve duty. Simulator sweeps also write a short results.csv, and pulse-volume filenames explicitly use mL. Live status, Fit All, and measurement labels use their correct physical units.\n\nThis Valinor GUI update retains gauge firmware rev27v-gauge-38, the Max presets, and existing controls and calibrations. Unit conversion does not establish absolute flow accuracy or independent MAP accuracy.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.92",
   "mandatory": false,
   "channel": "valinor"
 }
