@@ -1,31 +1,31 @@
 {
-    "_comment":  [
-                     "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
-                     "public HTTPS -- there is deliberately NO credential in the client. See",
-                     "README.md for why an embedded token was rejected.",
-                     "",
-                     "This file is the ONLY thing the updater needs to read. Keep it small and",
-                     "keep it valid JSON: a malformed manifest must fail soft in the client, but",
-                     "there is no reason to rely on that.",
-                     "",
-                     "The installer is a GitHub Release asset rather than a repository blob.",
-                     "Keep installer_url version-specific: an existing manifest must always",
-                     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
-                 ],
-    "schema":  1,
-    "version":  "v3.1.284",
-    "published":  "2026-10-09",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.284/SmartCuff_Setup.exe",
-    "sha256":  "d9345aca023b18a3e220390e66ca817e99cd80a9a1cd43e4d95b09d99dc70330",
-    "size_bytes":  223697853,
-    "min_supported":  null,
-    "notes":  "Simulator link checks now use the native Arduino reader and ProSim polling timestamps, so delayed GUI delivery does not falsely abort a trial. Real stale links and hardware fault protections remain active.\n\nRecording PDFs render in a separate serialized process. Closing a recording keeps live telemetry responsive and preserves the exact CSV/JSON paths. Report errors retain data and do not stop measurements. Window close stops and vents hardware before waiting for pending reports.\n\nValidated with 36 focused Simulator/report tests, layout audit and mocked GUI smoke on each branch. Firmware, PID, calibration, presets and NI reference timing are unchanged.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.284",
-    "mandatory":  false,
-    "channel":  "stable",
-    "_channel_note":  [
-                          "stable is the only channel today. If a test channel is ever added, publish",
-                          "a second manifest (version-beta.json) rather than adding branching logic to",
-                          "the client -- the client stays a dumb fetch-and-compare."
-                      ]
+  "_comment": [
+    "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
+    "public HTTPS -- there is deliberately NO credential in the client. See",
+    "README.md for why an embedded token was rejected.",
+    "",
+    "This file is the ONLY thing the updater needs to read. Keep it small and",
+    "keep it valid JSON: a malformed manifest must fail soft in the client, but",
+    "there is no reason to rely on that.",
+    "",
+    "The installer is a GitHub Release asset rather than a repository blob.",
+    "Keep installer_url version-specific: an existing manifest must always",
+    "resolve to the exact immutable bytes whose size and SHA-256 it declares."
+  ],
+  "schema": 1,
+  "version": "v3.1.285",
+  "published": "2026-10-09",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.285/SmartCuff_Setup.exe",
+  "sha256": "4df1921cfacc509bf18cdb6a94f2e3264eddc02867d20e8c70f83626277ae649",
+  "size_bytes": 223703546,
+  "min_supported": null,
+  "notes": "Smart Cuff v3.1.285 displays NI-DAQ band-pass pressure in mmHg using the active pressure calibration, including recording replay. Pulse calibration omits display floors so the low-pressure pulse shape remains measurable.\n\nSmart Const now reinflates only to its nominal MAP + 5 endpoint, matching GUI, standalone and the protocol harness. Regular and High Max keep their existing hold sequence.\n\nValidation: 59 focused Default tests, 16 additional uploader/calibration-isolation checks, clean layout audit and smoke check. Device D protected snapshot/flash/restore and ten-minute seed-213 soak passed six cycles with 100% telemetry delivery. All six descent reversal checks passed.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.285",
+  "mandatory": false,
+  "channel": "stable",
+  "_channel_note": [
+    "stable is the only channel today. If a test channel is ever added, publish",
+    "a second manifest (version-beta.json) rather than adding branching logic to",
+    "the client -- the client stays a dumb fetch-and-compare."
+  ]
 }
