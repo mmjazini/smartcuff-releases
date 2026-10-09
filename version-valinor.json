@@ -1,18 +1,18 @@
 {
-  "_comment": [
-    "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-    "v3.2.* releases and is intentionally separate from version.json.",
-    "The installed client needs no GitHub credential and fails silently offline."
-  ],
-  "schema": 1,
-  "version": "v3.2.85",
-  "published": "2026-10-09",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.85/SmartCuff_Setup.exe",
-  "sha256": "1fd92315a21ee80e3b8cc8b49a1659ae50487191608189ef7fe79ac6b985bcc5",
-  "size_bytes": 216140384,
-  "min_supported": null,
-  "notes": "Simulator tolerates brief buffered NI delivery with a two-second warning and fifteen-second grace. Persistent stalls stop and vent the cuff, preserve aborted files, restart the same NI task after verified IDLE, and retry exact settings after fresh acquisition and thirty seconds vented. Retries are bounded. Success requires native data through protocol completion without clock gaps or backtracks. Arduino protections, PID, calibration and presets remain unchanged. Original trial IDs remain stable in results CSVs. 154 focused tests passed per branch; layout and GUI smoke passed. NI pause root cause remains unproven.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.85",
-  "mandatory": false,
-  "channel": "valinor"
+    "_comment":  [
+                     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
+                     "v3.2.* releases and is intentionally separate from version.json.",
+                     "The installed client needs no GitHub credential and fails silently offline."
+                 ],
+    "schema":  1,
+    "version":  "v3.2.86",
+    "published":  "2026-10-09",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.86/SmartCuff_Setup.exe",
+    "sha256":  "bed0f05c82b7a8d57e4cbd937ac14fba00eee13f575f1b849dec5fbbdb4aee46",
+    "size_bytes":  216180994,
+    "min_supported":  null,
+    "notes":  "Simulator link checks now use the native Arduino reader and ProSim polling timestamps, so delayed GUI delivery does not falsely abort a trial. Real stale links and hardware fault protections remain active.\n\nRecording PDFs render in a separate serialized process. Closing a recording keeps live telemetry responsive and preserves the exact CSV/JSON paths. Report errors retain data and do not stop measurements. Window close stops and vents hardware before waiting for pending reports.\n\nValidated with 36 focused Simulator/report tests, layout audit and mocked GUI smoke on each branch. Firmware, PID, calibration, Max presets and NI reference timing are unchanged.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.86",
+    "mandatory":  false,
+    "channel":  "valinor"
 }
