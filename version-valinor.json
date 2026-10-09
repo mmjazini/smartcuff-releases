@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.84",
-  "published": "2026-10-08",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.84/SmartCuff_Setup.exe",
-  "sha256": "7223f9175983d90deed94dac18f458d96c852ec2d0cf9291bc6696eb083b1946",
-  "size_bytes": 216160539,
+  "version": "v3.2.85",
+  "published": "2026-10-09",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.85/SmartCuff_Setup.exe",
+  "sha256": "1fd92315a21ee80e3b8cc8b49a1659ae50487191608189ef7fe79ac6b985bcc5",
+  "size_bytes": 216140384,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.84: Simulator recording and sweep results\r\n\r\n- Start sweep saves and closes an existing recording automatically after the queue and hardware checks pass. A failed recording close prevents trial startup.\r\n- Simulator includes Open recording folder, opening the active/latest sweep or the recordings folder.\r\n- Preview shades successful trial rows green and aborted/failed rows red. Status text remains visible; new sweeps clear prior outcomes.\r\n- Every sweep generates sweep_results.csv: one row per planned trial with simulator settings, cuff/mandrel, measured Arduino and NI channel statistics, ProSim observations, detected Smart MAP/fallback, status and raw-file references. Aborted and unrun trials remain distinguishable; absent measurements stay blank.\r\n- Acquisition checks use native NI sample freshness and successful-read heartbeat instead of GUI delivery timestamps. Genuine acquisition stalls still stop the sweep and preserve partial data. The previously observed approximately 11-second native-delivery pauses remain under investigation.\r\n\r\nValidation: 104 focused tests passed on this branch; layout audit, mocked GUI smoke, legacy checks and packaged panel checks passed. Real Default bench validation confirmed recording handoff and separate native files, then ended on operator STOP; it did not complete the two-trial protocol run. No firmware, PID, calibration equations, safety thresholds or branch preset changes.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.84",
+  "notes": "Simulator tolerates brief buffered NI delivery with a two-second warning and fifteen-second grace. Persistent stalls stop and vent the cuff, preserve aborted files, restart the same NI task after verified IDLE, and retry exact settings after fresh acquisition and thirty seconds vented. Retries are bounded. Success requires native data through protocol completion without clock gaps or backtracks. Arduino protections, PID, calibration and presets remain unchanged. Original trial IDs remain stable in results CSVs. 154 focused tests passed per branch; layout and GUI smoke passed. NI pause root cause remains unproven.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.85",
   "mandatory": false,
   "channel": "valinor"
 }
