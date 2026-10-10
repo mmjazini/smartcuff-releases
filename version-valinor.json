@@ -1,18 +1,18 @@
 {
-    "_comment":  [
-                     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-                     "v3.2.* releases and is intentionally separate from version.json.",
-                     "The installed client needs no GitHub credential and fails silently offline."
-                 ],
-    "schema":  1,
-    "version":  "v3.2.105",
-    "published":  "2026-10-10",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.105/SmartCuff_Setup.exe",
-    "sha256":  "b9ec5b8f8e2839e07f2350dfbc44a0900ab16a4d31ede89df1f6d0f4822501d0",
-    "size_bytes":  216221484,
-    "min_supported":  null,
-    "notes":  "Simulator controls now fit narrow panels on Default and Valinor. Trial status is beside the trial number, keeping successful and aborted outcomes visible while settings scroll. Existing Bench tools remain available in their own scrolling section.\n\nValidated with 42 focused tests per branch, narrow/wide panel bounds, full layout audit, and GUI smoke checks with no exceptions. Firmware, control, calibration, acquisition, and safety settings remain unchanged. Includes the preceding release\u0027s complete NI failed-read journals.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.105",
-    "mandatory":  false,
-    "channel":  "valinor"
+  "_comment": [
+    "Valinor Smart Cuff GUI update manifest. This feed accepts only",
+    "v3.2.* releases and is intentionally separate from version.json.",
+    "The installed client needs no GitHub credential and fails silently offline."
+  ],
+  "schema": 1,
+  "version": "v3.2.106",
+  "published": "2026-10-10",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.106/SmartCuff_Setup.exe",
+  "sha256": "eae09a1e71165e59a870745533b8d58977b75194d774115b3f2abe3bb8a95bce",
+  "size_bytes": 216198155,
+  "min_supported": null,
+  "notes": "PID reports now retain actual integral and derivative values from both GUI and bench recording schemas. Actuator reversal scoring accumulates travel from each extremum so smooth, small steps cannot hide a real direction change. The unchanged 0.25-percentage-point deadband and 0.5/s gate remain visible.\n\nThe bench procedure scores the full startup before PID ramp rebasing. Firmware and controller settings remain unchanged (Default292 / Valinor42). Experimental293 was rejected after its measured deflation startup delay; it is not included.\n\nIncludes the prior Simulator layout, recording recovery, native logging, multi-protocol queue and physical-unit plotting improvements. Calibration profiles and original recordings remain preserved.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.106",
+  "mandatory": false,
+  "channel": "valinor"
 }
