@@ -1,18 +1,18 @@
 {
-  "_comment": [
-    "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-    "v3.2.* releases and is intentionally separate from version.json.",
-    "The installed client needs no GitHub credential and fails silently offline."
-  ],
-  "schema": 1,
-  "version": "v3.2.104",
-  "published": "2026-10-10",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.104/SmartCuff_Setup.exe",
-  "sha256": "626368879cc78d876b6724a3179b3d2e821407dca870976bede15f57b232ac55",
-  "size_bytes": 216213377,
-  "min_supported": null,
-  "notes": "Smart Cuff v3.2.104 retains every NI failed-read event in a separate errors.jsonl journal when storage keeps up. The latest checkpoint remains bounded; queue overflow, invalid events, mirror failure and close timeout are explicit. Diagnostic faults do not stop raw sample recording or alter NI timestamps.\r\n\r\n51 focused production checks passed on each branch, plus17 candidate branch/fault checks. Existing NI sample rows, native timeline, backlog handling and recording metadata remain unchanged. Firmware is unchanged (Default followup292; Valinor gauge42), so no flash or soak applies. The active experiment stays on Default302 until inactive; this change does not resolve the underlying NI driver stall or qualify partial-buffer completeness.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.104",
-  "mandatory": false,
-  "channel": "valinor"
+    "_comment":  [
+                     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
+                     "v3.2.* releases and is intentionally separate from version.json.",
+                     "The installed client needs no GitHub credential and fails silently offline."
+                 ],
+    "schema":  1,
+    "version":  "v3.2.105",
+    "published":  "2026-10-10",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.105/SmartCuff_Setup.exe",
+    "sha256":  "b9ec5b8f8e2839e07f2350dfbc44a0900ab16a4d31ede89df1f6d0f4822501d0",
+    "size_bytes":  216221484,
+    "min_supported":  null,
+    "notes":  "Simulator controls now fit narrow panels on Default and Valinor. Trial status is beside the trial number, keeping successful and aborted outcomes visible while settings scroll. Existing Bench tools remain available in their own scrolling section.\n\nValidated with 42 focused tests per branch, narrow/wide panel bounds, full layout audit, and GUI smoke checks with no exceptions. Firmware, control, calibration, acquisition, and safety settings remain unchanged. Includes the preceding release\u0027s complete NI failed-read journals.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.105",
+    "mandatory":  false,
+    "channel":  "valinor"
 }
