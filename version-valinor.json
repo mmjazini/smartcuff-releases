@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.107",
+  "version": "v3.2.108",
   "published": "2026-10-10",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.107/SmartCuff_Setup.exe",
-  "sha256": "401dd296144d8153a3ecbd65ac7cd1e695d09fb30ef84d94dc8077284231996e",
-  "size_bytes": 216224231,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.108/SmartCuff_Setup.exe",
+  "sha256": "7aef1fc52cc5214e58223ed169f95807b57959bf4d66bdaf869c944511cb1d7a",
+  "size_bytes": 216226080,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.107\r\n\r\nRecover original NI samples after a partial timeout without changing their\r\ntimestamps. Preserve every channel and the failed-read evidence; stop when\r\nthe original interval cannot be verified. Buffered delivery pauses remain\r\nvisible. Calibration values and branch-specific presets are preserved.\r\n\r\nValidation: real NI driver cursor/reread test, 20-second native acquisition,\r\nreader/worker/journal regressions and branch-specific time-alignment checks.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.107",
+  "notes": "Smart Cuff v3.2.108\r\n\r\nDeflation reports now distinguish requested and observed rates even when a\r\ndescent finishes slowly. Read trial events and standalone firmware commands;\r\nshow the source and leave unverified requests unknown. Preserve all raw data.\r\nNo controller, calibration, safety or time alignment change.\r\n\r\nValidation: requested4mmHg/s versus actual3mmHg/s regression, firmware/GUI\r\ncommand parsing, missing evidence, existing helpers and analyzer checks.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.108",
   "mandatory": false,
   "channel": "valinor"
 }
