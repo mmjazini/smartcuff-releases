@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.109",
+  "version": "v3.2.110",
   "published": "2026-10-10",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.109/SmartCuff_Setup.exe",
-  "sha256": "8be5b3c8d5881a4f2b16e88a0d5bfd49af6442d9c1e2b8487a4ecf9f57ca496d",
-  "size_bytes": 216246188,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.110/SmartCuff_Setup.exe",
+  "sha256": "e4f87cb5a91b91730644cf61c37eb584cef4ef25413b34ec4e9cda8d2fa240a9",
+  "size_bytes": 216203862,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.109\r\n\r\nThe PID page shows current measured-rate controller decisions in mmHg/s and\r\nvalve duty percent, when supported by the attached firmware. Inactive position\r\nPID components are identified; stale decisions expire and clear at run boundaries.\r\nExisting firmware stays compatible. Raw data, control and calibration are preserved.\r\n\r\nValidated display parsing, expiry, run boundaries, inactive PID terms, offline\r\nstatus, layout and smoke behavior. Experimental controller changes are excluded.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.109",
+  "notes": "Smart Cuff v3.2.110\r\n\r\nTrial summaries and results.csv now include measured-rate decisions, startup\r\nvalve changes, rate-error RMS in mmHg/s and ramp-error RMS in mmHg. Live plots\r\nhide inactive position-PID terms when firmware reports measured-rate control.\r\nOriginal raw events and timestamps remain intact. No firmware/controller or\r\ncalibration change; experimental controller work is not included.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.110",
   "mandatory": false,
   "channel": "valinor"
 }
