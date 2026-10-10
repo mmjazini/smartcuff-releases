@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.99",
+  "version": "v3.2.100",
   "published": "2026-10-10",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.99/SmartCuff_Setup.exe",
-  "sha256": "c9803d52df4ed82e0b05ff92d3f61014ef47001f9a7418d0ede881647be5d235",
-  "size_bytes": 216208258,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.100/SmartCuff_Setup.exe",
+  "sha256": "d07d11ccb615af70d656f70e1d567a3b7fb98b990498c8f855869444a70f409b",
+  "size_bytes": 216217900,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.99 / rev27v-gauge-42 preserves the valve during normal sealed primitive transitions while keeping STOP/fault venting. Shared PID seeding and delivered-output anti-windup corrections are included; Valinor retains its Max presets and measured-rate control profile.\r\r\n\r\r\nSimulator recording diagnostics now use physical units and exact Arduino sequence delivery; NI logs retain failed-read timing and successful-read intervals. Protected flash/restore and the ten-minute seed-213 Valinor soak passed all 8 hard-gate cycles with 100.00% Arduino delivery and zero NI sample gaps. Mean deflation was 2.64 against the 3.0 mmHg/s command, with 3.2–10.9 mmHg peak overshoot. These remain performance limitations. Layout audits and smoke tests passed.\r\r\n\r\r\nThis release does not claim perfect MAP, universal pulse preservation or generalized cross-cuff SysID. Default and Valinor remain separate application/firmware channels.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.99",
+  "notes": "Buffered NI delivery recovery now restores the simulator's current trial status\ninstead of leaving a stale waiting message. Delay and recovery timestamps stay\nin the recording. Controller, native sample time and acquisition are unchanged.\n\nBoth branch simulator suites passed 36 tests each. Layout audits were clean and\nGUI smoke tests passed. This application-only correction retains the previously\nqualified branch firmware, control profiles, calibration and safety boundaries.\n\nThe original wrist/syringe experiment continues with preserved original trial\nindices and 30-second breaks. Startup ramp error, strong disturbance response,\nweak-pulse MAP accuracy and cross-cuff SysID remain measured qualification work;\nthis release does not claim perfect control or arterial MAP accuracy.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.100",
   "mandatory": false,
   "channel": "valinor"
 }
