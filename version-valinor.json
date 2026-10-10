@@ -1,18 +1,18 @@
 {
-  "_comment": [
-    "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-    "v3.2.* releases and is intentionally separate from version.json.",
-    "The installed client needs no GitHub credential and fails silently offline."
-  ],
-  "schema": 1,
-  "version": "v3.2.100",
-  "published": "2026-10-10",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.100/SmartCuff_Setup.exe",
-  "sha256": "d07d11ccb615af70d656f70e1d567a3b7fb98b990498c8f855869444a70f409b",
-  "size_bytes": 216217900,
-  "min_supported": null,
-  "notes": "Buffered NI delivery recovery now restores the simulator's current trial status\ninstead of leaving a stale waiting message. Delay and recovery timestamps stay\nin the recording. Controller, native sample time and acquisition are unchanged.\n\nBoth branch simulator suites passed 36 tests each. Layout audits were clean and\nGUI smoke tests passed. This application-only correction retains the previously\nqualified branch firmware, control profiles, calibration and safety boundaries.\n\nThe original wrist/syringe experiment continues with preserved original trial\nindices and 30-second breaks. Startup ramp error, strong disturbance response,\nweak-pulse MAP accuracy and cross-cuff SysID remain measured qualification work;\nthis release does not claim perfect control or arterial MAP accuracy.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.100",
-  "mandatory": false,
-  "channel": "valinor"
+    "_comment":  [
+                     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
+                     "v3.2.* releases and is intentionally separate from version.json.",
+                     "The installed client needs no GitHub credential and fails silently offline."
+                 ],
+    "schema":  1,
+    "version":  "v3.2.101",
+    "published":  "2026-10-10",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.101/SmartCuff_Setup.exe",
+    "sha256":  "1fcf2f4c799911a8cff60649096516cc3c32ad9076d823f98751c9d752f6ed74",
+    "size_bytes":  216223153,
+    "min_supported":  null,
+    "notes":  "Live NI acquisition now keeps mirrored diagnostic checkpoints every five seconds,\nusing a background writer with one replaceable pending snapshot. A process crash\ncan no longer discard all acquisition stall and read-error timing. Checkpoints\nare atomic, incomplete diagnostics; closed recording summaries remain authoritative.\n\nBoth branches passed 70 focused checks, clean layout audits and GUI smoke tests.\nThe change does not alter firmware, controller behavior, calibration or NI time.\nEach release retains its branch-specific qualified firmware and menu.\n\nStartup deflation tracking and pulse-dependent Smart Const landing remain measured\ncontroller issues. Weak-pulse MAP, low-pressure pulse preservation, cross-cuff SysID\nand fleet qualification remain open. The active original270 simulator experiment\nkeeps its installed version until collection ends and the live idle gate passes.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.101",
+    "mandatory":  false,
+    "channel":  "valinor"
 }
