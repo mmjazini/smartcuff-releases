@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.113",
+  "version": "v3.2.114",
   "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.113/SmartCuff_Setup.exe",
-  "sha256": "9cf017ee6464f059d596c5b672dee083ee818ecf859bd313ff74e69eaef779af",
-  "size_bytes": 216239673,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.114/SmartCuff_Setup.exe",
+  "sha256": "cb2c80363fdf191aaff3b63375cb537837837492bf44a6f4ce69e1f8ff72acc8",
+  "size_bytes": 216251261,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.113\r\n\r\nSysID now checks current-probe pulses before reusing a quiet plateau, improving\r\nlong-window pressure-rate measurements when pulses emerge at lower pressure.\r\nProbe duration, independent checks, calibration and firmware are unchanged.\r\nThis does not qualify unresolved partial beats or cross-cuff tuning transfer.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.113",
+  "notes": "Smart Cuff v3.2.114\r\n\r\nApplication updates preserve this PC's protected-flash record instead of deleting it. The installer excludes workstation records, and startup still verifies the source hash and attached controller version. Device calibration and firmware are unchanged. Includes the current-probe SysID pulse check.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.114",
   "mandatory": false,
   "channel": "valinor"
 }
