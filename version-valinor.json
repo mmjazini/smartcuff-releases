@@ -1,18 +1,18 @@
 {
-    "_comment":  [
-                     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-                     "v3.2.* releases and is intentionally separate from version.json.",
-                     "The installed client needs no GitHub credential and fails silently offline."
-                 ],
-    "schema":  1,
-    "version":  "v3.2.116",
-    "published":  "2026-10-11",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.116/SmartCuff_Setup.exe",
-    "sha256":  "cddb96392709990e13d8c92c4d8b42e6c92ab6af1f2b382d8a8f67c3f38934c7",
-    "size_bytes":  216224786,
-    "min_supported":  null,
-    "notes":  "v3.2.116\r\n\r\nRecording heart-rate diagnostics now follow acquisition timestamps and include GUI-driven REMOTE deflation. Delayed GUI delivery cannot change beat spacing. Duplicates, clock resets and gaps are handled; peak interpolation reduces telemetry rounding. Firmware, controller, MAP and saved calibration are unchanged. Includes the same-frame raw/averaged SysID diagnostics.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.116",
-    "mandatory":  false,
-    "channel":  "valinor"
+  "_comment": [
+    "Valinor Smart Cuff GUI update manifest. This feed accepts only",
+    "v3.2.* releases and is intentionally separate from version.json.",
+    "The installed client needs no GitHub credential and fails silently offline."
+  ],
+  "schema": 1,
+  "version": "v3.2.117",
+  "published": "2026-10-11",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.117/SmartCuff_Setup.exe",
+  "sha256": "5d9d07a0ed4248cc0e929cb70bfff3aff35de3c423da35fefd55673ffdaf6148",
+  "size_bytes": 216244296,
+  "min_supported": null,
+  "notes": "v3.2.117\r\n\r\nMatched SysID probes seal before fitting so computation latency cannot prolong valve opening. Acquisition endpoints stay unchanged; waits use monotonic time. Repeatable weak pulses cannot certify a quiet plateau solely by low RMS. Partial beats remain unqualified; firmware, PID and saved tuning are unchanged.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.117",
+  "mandatory": false,
+  "channel": "valinor"
 }
