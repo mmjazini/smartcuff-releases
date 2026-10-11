@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.111",
+  "version": "v3.2.112",
   "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.111/SmartCuff_Setup.exe",
-  "sha256": "78b0f06c533118e55e648d4d8c83aeaf40ade3e5898570b15d103eb8df96528a",
-  "size_bytes": 216224178,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.112/SmartCuff_Setup.exe",
+  "sha256": "b21947e21ac182866723a7386ab836ed473cc67a5e7c21c9c269aefd01e46f82",
+  "size_bytes": 224198039,
   "min_supported": null,
-  "notes": "Adds Manual simulator settings: apply one BP, heart rate, volume, waveform and envelope shift without a sweep or cuff protocol. Pump, Vent and existing protocols remain available. Simulator stop is separate from cuff STOP. Existing sweep, preview, recording and MAP tools remain. Firmware and calibration are unchanged.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.111",
+  "notes": "Smart Cuff v3.2.112 (Valinor)\r\n\r\nImproves recorder shutdown, recording clock metadata, pressure-gap messages,\r\nand pulse-versus-baseline diagnostics. Immediate protocol commands are batched\r\nwithin a bounded timer tick while acknowledgement and serial pacing remain.\r\nNative pressure/flow/voltage samples, calibration and firmware are preserved.\r\n\r\nFirmware remainsrev27v-gauge-42. Experimental319 controller research is not bundled.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.112",
   "mandatory": false,
   "channel": "valinor"
 }
