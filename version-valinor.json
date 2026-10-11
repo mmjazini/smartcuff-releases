@@ -1,18 +1,18 @@
 {
-  "_comment": [
-    "Valinor Smart Cuff GUI update manifest. This feed accepts only",
-    "v3.2.* releases and is intentionally separate from version.json.",
-    "The installed client needs no GitHub credential and fails silently offline."
-  ],
-  "schema": 1,
-  "version": "v3.2.115",
-  "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.115/SmartCuff_Setup.exe",
-  "sha256": "c107beafc3d3943ba9babcc292d3e66c6f6af7b724d65144a2caf4c178cd5013",
-  "size_bytes": 216234958,
-  "min_supported": null,
-  "notes": "v3.2.115\r\n\r\nSysID records raw ADC and averaged pressure rate disagreement on the same acquisition frames, bound to live device calibration. Calculations occur after measurements with safe actuator state. Missing/noisy/pulsing input is retained as unavailable. Primary tuning, firmware and saved calibration remain unchanged. Headless SysID shares the GUI direct acquisition feed.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.115",
-  "mandatory": false,
-  "channel": "valinor"
+    "_comment":  [
+                     "Valinor Smart Cuff GUI update manifest. This feed accepts only",
+                     "v3.2.* releases and is intentionally separate from version.json.",
+                     "The installed client needs no GitHub credential and fails silently offline."
+                 ],
+    "schema":  1,
+    "version":  "v3.2.116",
+    "published":  "2026-10-11",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.116/SmartCuff_Setup.exe",
+    "sha256":  "cddb96392709990e13d8c92c4d8b42e6c92ab6af1f2b382d8a8f67c3f38934c7",
+    "size_bytes":  216224786,
+    "min_supported":  null,
+    "notes":  "v3.2.116\r\n\r\nRecording heart-rate diagnostics now follow acquisition timestamps and include GUI-driven REMOTE deflation. Delayed GUI delivery cannot change beat spacing. Duplicates, clock resets and gaps are handled; peak interpolation reduces telemetry rounding. Firmware, controller, MAP and saved calibration are unchanged. Includes the same-frame raw/averaged SysID diagnostics.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.116",
+    "mandatory":  false,
+    "channel":  "valinor"
 }
