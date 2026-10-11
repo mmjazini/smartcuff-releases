@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.114",
+  "version": "v3.2.115",
   "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.114/SmartCuff_Setup.exe",
-  "sha256": "cb2c80363fdf191aaff3b63375cb537837837492bf44a6f4ce69e1f8ff72acc8",
-  "size_bytes": 216251261,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.115/SmartCuff_Setup.exe",
+  "sha256": "c107beafc3d3943ba9babcc292d3e66c6f6af7b724d65144a2caf4c178cd5013",
+  "size_bytes": 216234958,
   "min_supported": null,
-  "notes": "Smart Cuff v3.2.114\r\n\r\nApplication updates preserve this PC's protected-flash record instead of deleting it. The installer excludes workstation records, and startup still verifies the source hash and attached controller version. Device calibration and firmware are unchanged. Includes the current-probe SysID pulse check.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.114",
+  "notes": "v3.2.115\r\n\r\nSysID records raw ADC and averaged pressure rate disagreement on the same acquisition frames, bound to live device calibration. Calculations occur after measurements with safe actuator state. Missing/noisy/pulsing input is retained as unavailable. Primary tuning, firmware and saved calibration remain unchanged. Headless SysID shares the GUI direct acquisition feed.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.115",
   "mandatory": false,
   "channel": "valinor"
 }
