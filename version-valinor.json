@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.121",
+  "version": "v3.2.122",
   "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.121/SmartCuff_Setup.exe",
-  "sha256": "8a1d1816fd246f178e05aa22250aa23b951886549a7b2ba6a07ff5530a5b6aaf",
-  "size_bytes": 216206419,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.122/SmartCuff_Setup.exe",
+  "sha256": "28e2bc4e4963f850a03268a81f1b15e40ab380965864d0fab05eeedbc19c81cc",
+  "size_bytes": 216233305,
   "min_supported": null,
-  "notes": "v3.2.121\r\n\r\nNormal and automatic-update launches open a native Windows GUI after offscreen tests. The operational launcher clears inherited test platform and no-autostart settings; direct Python tests remain headless. Lifecycle logs retain platform and minimized settings for diagnosis.\r\n\r\nValidation: 21 focused launcher/lifecycle/update-ownership tests per branch, clean layout audits and GUI smoke checks. Firmware, PID, calibration and accepted tuning remain unchanged. This does not qualify SysID cuff transfer or fleet controller performance.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.121",
+  "notes": "v3.2.122\r\n\r\nSysID now refuses a refill that has not completed IDLE or whose sealed readback is stale, active, cancelled, faulted or nonfinite. Rejected preparation always saves partial evidence and emits the final failed result, so the GUI cannot remain stuck showing a running scan. Preparation logs report the actual pressure after settling; pressure-match failures show the measured value and allowed difference.\r\n\r\nValidation: 124 focused SysID, command-integrity and vent-latch regressions; GUI layout and smoke checks. Firmware, PID, calibration and saved tuning remain unchanged. Bench refill/response experiments are retained but withheld because they do not pass repeated qualification. This update does not establish cuff transfer or fleet controller reliability.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.122",
   "mandatory": false,
   "channel": "valinor"
 }
