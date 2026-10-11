@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.120",
+  "version": "v3.2.121",
   "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.120/SmartCuff_Setup.exe",
-  "sha256": "439d51f381fc66565671e1ab1edfda2de89bd40442573984459dc2d9fa7b2dd8",
-  "size_bytes": 216257325,
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.121/SmartCuff_Setup.exe",
+  "sha256": "8a1d1816fd246f178e05aa22250aa23b951886549a7b2ba6a07ff5530a5b6aaf",
+  "size_bytes": 216206419,
   "min_supported": null,
-  "notes": "v3.2.120\r\n\r\nThe calibrated raw-ADC SysID comparison now checks the already-collected sealed evidence after each matched probe. Pulses emerging after a quiet plateau cannot silently authorize a biased raw derivative. Invalid raw evidence is reported as unavailable. This diagnostic does not change the primary estimator, saved tuning, firmware or controller performance.\r\n\r\nValidation: 373 focused SysID tests on each branch; layout CLEAN and GUI smoke RC 0. Full-band identification, cuff transfer and controller qualification remain ongoing.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.120",
+  "notes": "v3.2.121\r\n\r\nNormal and automatic-update launches open a native Windows GUI after offscreen tests. The operational launcher clears inherited test platform and no-autostart settings; direct Python tests remain headless. Lifecycle logs retain platform and minimized settings for diagnosis.\r\n\r\nValidation: 21 focused launcher/lifecycle/update-ownership tests per branch, clean layout audits and GUI smoke checks. Firmware, PID, calibration and accepted tuning remain unchanged. This does not qualify SysID cuff transfer or fleet controller performance.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.121",
   "mandatory": false,
   "channel": "valinor"
 }
