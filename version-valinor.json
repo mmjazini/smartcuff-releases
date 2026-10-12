@@ -5,14 +5,14 @@
                      "The installed client needs no GitHub credential and fails silently offline."
                  ],
     "schema":  1,
-    "version":  "v3.2.127",
+    "version":  "v3.2.128",
     "published":  "2026-10-12",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.127/SmartCuff_Setup.exe",
-    "sha256":  "194eb47932499d22a1eec31cbd2a745493c6aa98fd3d28620082e0345b2e1e69",
-    "size_bytes":  216241042,
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.128/SmartCuff_Setup.exe",
+    "sha256":  "5a784320e9f907610ad70d03e5be30439abe934d088bb4ada8656273cc53c4ea",
+    "size_bytes":  216275132,
     "min_supported":  null,
-    "notes":  "v3.2.127\r\n\r\nSysID comparison status, gain text and detailed response checks now agree. Retained measurements are recomputed before a comparison can display qualified results; missing evidence and disagreeing repeats cannot be overridden by a stale quality flag.\r\n\r\nValidation: 34 focused result/independent-repeat regressions per branch, layout and smoke checks. Firmware and saved device tuning/calibration are unchanged. This update does not claim cuff transfer or fleet qualification.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.127",
+    "notes":  "Closing now waits for native and fleet worker completion, cancels partial update downloads, and suppresses late update callbacks. Active simulator recordings stay protected until Stop sweep; session logs finalize before exit. SysID results recheck retained measurements before displaying qualification. Firmware and calibration remain unchanged. Controller startup, hold landing and cuff/fleet transfer are not yet qualified.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.128",
     "mandatory":  false,
     "channel":  "valinor"
 }
