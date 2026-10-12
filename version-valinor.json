@@ -5,14 +5,14 @@
                      "The installed client needs no GitHub credential and fails silently offline."
                  ],
     "schema":  1,
-    "version":  "v3.2.133",
+    "version":  "v3.2.134",
     "published":  "2026-10-12",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.133/SmartCuff_Setup.exe",
-    "sha256":  "fda9ce8e9d0fe7c6dd9f15bc3ff796405924bc4bbb796610b90bcbef9c3fb271",
-    "size_bytes":  216253001,
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.134/SmartCuff_Setup.exe",
+    "sha256":  "09e405186109655a0e04f80064056f82316787c18e32e9704018620645d425bf",
+    "size_bytes":  216284765,
     "min_supported":  null,
-    "notes":  "Loading saved configuration now uses supported device commands and both PID sets. Fresh native-timestamped readback, confirmed flash saving and a second complete capture are required before replacing the archived local restore profile. Incomplete or synthesized archived SysID runs cannot replace known-good calibration. Firmware and branch protocol menus are unchanged. Both branch layout/smoke and focused tests passed; Device D live restoration matched its baseline. Controller tracking and independent MAP/SysID transfer qualification remain separate ongoing work.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.133",
+    "notes":  "Accepted SysID archives now preserve the measured and pushed Valinor feedforward reference of3mmHg/s instead of incorrectly labeling it4. Verified archived restore retains the actual branch reference.420focused SysID, snapshot-restore and branch-calibration checks passed. Firmwaregauge42, Max80..220 menu, controller gains, calibration and native NI clock unchanged. Full-band repeatability and device/cuff transfer are not qualified by this metadata correction.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.134",
     "mandatory":  false,
     "channel":  "valinor"
 }
