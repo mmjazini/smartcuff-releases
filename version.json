@@ -1,31 +1,31 @@
 {
-  "_comment": [
-    "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
-    "public HTTPS -- there is deliberately NO credential in the client. See",
-    "README.md for why an embedded token was rejected.",
-    "",
-    "This file is the ONLY thing the updater needs to read. Keep it small and",
-    "keep it valid JSON: a malformed manifest must fail soft in the client, but",
-    "there is no reason to rely on that.",
-    "",
-    "The installer is a GitHub Release asset rather than a repository blob.",
-    "Keep installer_url version-specific: an existing manifest must always",
-    "resolve to the exact immutable bytes whose size and SHA-256 it declares."
-  ],
-  "schema": 1,
-  "version": "v3.1.325",
-  "published": "2026-10-12",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.325/SmartCuff_Setup.exe",
-  "sha256": "91b937c1ad023219e0b7463b901396f70a15f17d8347573697fdeb90f65c2791",
-  "size_bytes": 223770206,
-  "min_supported": null,
-  "notes": "v3.1.325\r\n\r\nThe launcher verifies attached firmware identity before using a workstation flash receipt. A silent controller blocks launch without erase; disconnected offline use remains available. Two queued supervisors no longer reinstall or reopen an identical application release. Explicit same-branch version pins remain supported.\r\n\r\nIncludes measured-rate PID diagnostics and consistent SysID status from the previous display updates. Controller firmware and stored calibration/tuning are unchanged. Experimental controller359 is withheld pending tracking, pulse and GUI/standalone qualification.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.325",
-  "mandatory": false,
-  "channel": "stable",
-  "_channel_note": [
-    "stable is the only channel today. If a test channel is ever added, publish",
-    "a second manifest (version-beta.json) rather than adding branching logic to",
-    "the client -- the client stays a dumb fetch-and-compare."
-  ]
+    "_comment":  [
+                     "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
+                     "public HTTPS -- there is deliberately NO credential in the client. See",
+                     "README.md for why an embedded token was rejected.",
+                     "",
+                     "This file is the ONLY thing the updater needs to read. Keep it small and",
+                     "keep it valid JSON: a malformed manifest must fail soft in the client, but",
+                     "there is no reason to rely on that.",
+                     "",
+                     "The installer is a GitHub Release asset rather than a repository blob.",
+                     "Keep installer_url version-specific: an existing manifest must always",
+                     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
+                 ],
+    "schema":  1,
+    "version":  "v3.1.326",
+    "published":  "2026-10-12",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.326/SmartCuff_Setup.exe",
+    "sha256":  "bf66422bc28e8e36fa672a181b971ecdc09ace3aaa285d7e97c2b0cbddcce263",
+    "size_bytes":  223791519,
+    "min_supported":  null,
+    "notes":  "v3.1.326\r\n\r\nSysID comparison now requires two scans to agree across their overlapping measured duties. Finishing both scans and passing each scan\u0027s internal checks no longer implies repeatability. Reports preserve the original curves, prediction tolerances and failed duties, with measurement coverage reported separately.\r\n\r\nValidation: cross-scan shift/gain/symmetry regressions plus existing matched-probe and snapshot tests on both branches. Firmware, PID, calibration and saved tuning are unchanged. Experimental controller firmware is withheld; wrist/Omron and fleet qualification remain open.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.326",
+    "mandatory":  false,
+    "channel":  "stable",
+    "_channel_note":  [
+                          "stable is the only channel today. If a test channel is ever added, publish",
+                          "a second manifest (version-beta.json) rather than adding branching logic to",
+                          "the client -- the client stays a dumb fetch-and-compare."
+                      ]
 }
