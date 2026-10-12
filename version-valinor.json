@@ -5,14 +5,14 @@
     "The installed client needs no GitHub credential and fails silently offline."
   ],
   "schema": 1,
-  "version": "v3.2.122",
-  "published": "2026-10-11",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.122/SmartCuff_Setup.exe",
-  "sha256": "28e2bc4e4963f850a03268a81f1b15e40ab380965864d0fab05eeedbc19c81cc",
-  "size_bytes": 216233305,
+  "version": "v3.2.123",
+  "published": "2026-10-12",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.123/SmartCuff_Setup.exe",
+  "sha256": "9f166716c1dcc111dac27d899a35de05473c317db4a87a456ee0bc548415d6cd",
+  "size_bytes": 216246142,
   "min_supported": null,
-  "notes": "v3.2.122\r\n\r\nSysID now refuses a refill that has not completed IDLE or whose sealed readback is stale, active, cancelled, faulted or nonfinite. Rejected preparation always saves partial evidence and emits the final failed result, so the GUI cannot remain stuck showing a running scan. Preparation logs report the actual pressure after settling; pressure-match failures show the measured value and allowed difference.\r\n\r\nValidation: 124 focused SysID, command-integrity and vent-latch regressions; GUI layout and smoke checks. Firmware, PID, calibration and saved tuning remain unchanged. Bench refill/response experiments are retained but withheld because they do not pass repeated qualification. This update does not establish cuff transfer or fleet controller reliability.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.122",
+  "notes": "v3.2.123\r\n\r\nSysID detailed results, summary and phase markers now agree on independent recorded-probe checks. A cached pass flag cannot turn incomplete or failed measurements into a passing result. The detailed maximum prediction error is recalculated from the retained checks.\r\n\r\nValidation: 44 focused regressions per branch; clean layout audits and GUI smoke checks. Firmware, PID, calibration and accepted tuning are unchanged. Controller, cuff-transfer and production SysID qualification remain separate pending bench work.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.123",
   "mandatory": false,
   "channel": "valinor"
 }
