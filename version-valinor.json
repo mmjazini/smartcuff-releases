@@ -5,14 +5,14 @@
                      "The installed client needs no GitHub credential and fails silently offline."
                  ],
     "schema":  1,
-    "version":  "v3.2.128",
+    "version":  "v3.2.129",
     "published":  "2026-10-12",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.128/SmartCuff_Setup.exe",
-    "sha256":  "5a784320e9f907610ad70d03e5be30439abe934d088bb4ada8656273cc53c4ea",
-    "size_bytes":  216275132,
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.129/SmartCuff_Setup.exe",
+    "sha256":  "d41eeae5cbdbc089a538e8e5359217badb4082a6035a87b19f1e1d3791e38282",
+    "size_bytes":  216262710,
     "min_supported":  null,
-    "notes":  "Closing now waits for native and fleet worker completion, cancels partial update downloads, and suppresses late update callbacks. Active simulator recordings stay protected until Stop sweep; session logs finalize before exit. SysID results recheck retained measurements before displaying qualification. Firmware and calibration remain unchanged. Controller startup, hold landing and cuff/fleet transfer are not yet qualified.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.128",
+    "notes":  "Header arrows make hidden workspaces reachable; Measure retains complete sensor/channel names inside scrolling plot toolbars. Successful and aborted simulator rows remain green and red, with existing manual simulator and bench tools retained. Default and Valinor layout/smoke tests passed. Firmware, protocols, tuning and calibration unchanged. Controller startup, actual Smart Const landing and independent SysID repeatability remain unqualified.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.129",
     "mandatory":  false,
     "channel":  "valinor"
 }
