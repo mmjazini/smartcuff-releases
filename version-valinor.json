@@ -5,14 +5,14 @@
                      "The installed client needs no GitHub credential and fails silently offline."
                  ],
     "schema":  1,
-    "version":  "v3.2.135",
-    "published":  "2026-10-12",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.135/SmartCuff_Setup.exe",
-    "sha256":  "51dafd4fe6023cce4bb6f2cc53a6240872a7d40f4e750173cef51559b23c1df2",
-    "size_bytes":  216278975,
+    "version":  "v3.2.136",
+    "published":  "2026-10-13",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.136/SmartCuff_Setup.exe",
+    "sha256":  "0531edea90efd01cc9ad9154c0cf6b1de7234096af2b0a9ab047c9045022cc9c",
+    "size_bytes":  216294549,
     "min_supported":  null,
-    "notes":  "SysID reports actual midpoint pressure, start/end local rates, acceleration, uncertainty and whether the response is stationary. Changing responses remain clearly identified even when the polynomial fit is precise. Existing measurement rates, tuning/adoption gates, saved profiles and branch controller behavior remain unchanged. Default and Valinor focused322/layout CLEAN/smoke passed. Six new wrist/syringe measurement-only repeats delivered12113/12113Arduino=100%,127080NI samples,no gaps/backtracks. This is diagnostic evidence, not qualification of all bands or a device fleet. Experimental controller changes are not in this release.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.135",
+    "notes":  "Use live device Cal 2 to stop pump and vent at the calibrated 250 mmHg raw ADC voltage, capped by the existing independent 4 V interlock. Device D threshold is 3.88567 V. SysID requires fresh device-bound calibration before inflation, blocks targets at or above 250 mmHg, and stops on invalid or changed calibration/ADC. Terminal SysID raw acquisition evidence is saved before secondary analysis; fits wait for verified safe cleanup or remain deferred. Both branches compiled, passed 395 focused checks each, 47 additional preset/trap/abort checks each, layout CLEAN and smoke. Protected snapshot/flash/restore and ten-minute bench checks: Default 6/6, 26340/26340 Arduino=100%, 314660 NI samples; Valinor 7/7, 20281/20281 Arduino=100% in trial windows, 340610 NI samples. NI gaps/backtracks=0. Existing control profiles and calibration coefficients are preserved. Startup ramp tracking, physical pulse preservation, achieved Smart Const MAP+5 pressure, and full-band/device SysID repeatability remain under investigation; experimental controller or tuning changes are not included.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.136",
     "mandatory":  false,
     "channel":  "valinor"
 }
