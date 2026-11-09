@@ -1,31 +1,31 @@
 {
-    "_comment":  [
-                     "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
-                     "public HTTPS -- there is deliberately NO credential in the client. See",
-                     "README.md for why an embedded token was rejected.",
-                     "",
-                     "This file is the ONLY thing the updater needs to read. Keep it small and",
-                     "keep it valid JSON: a malformed manifest must fail soft in the client, but",
-                     "there is no reason to rely on that.",
-                     "",
-                     "The installer is a GitHub Release asset rather than a repository blob.",
-                     "Keep installer_url version-specific: an existing manifest must always",
-                     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
-                 ],
-    "schema":  1,
-    "version":  "v3.1.363",
-    "published":  "2026-10-28",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.363/SmartCuff_Setup.exe",
-    "sha256":  "7647fde0f115f634c11bd2b4202d9b4b9fad91ac384d1bae69364627c012db12",
-    "size_bytes":  223944667,
-    "min_supported":  null,
-    "notes":  "Smart Cuff v3.1.363 (Default) with firmware rev27v-followup-340.\r\n\r\nFirmware340 fixes two Smart Const problems seen on the device\u0027s own screen without any pulses. A MAP is now accepted only when the pulse detector has confirmed a cardiac rhythm, so small control oscillations can no longer be taken for a MAP. When MAP detection fails, every repetition now falls back to the preset\u0027s hold (80 mmHg) instead of the previous repetition\u0027s MAP + 5. Everything else is unchanged from firmware339; the controller is updated automatically on first launch.",
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.363",
-    "mandatory":  false,
-    "channel":  "stable",
-    "_channel_note":  [
-                          "stable is the only channel today. If a test channel is ever added, publish",
-                          "a second manifest (version-beta.json) rather than adding branching logic to",
-                          "the client -- the client stays a dumb fetch-and-compare."
-                      ]
+  "_comment": [
+    "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
+    "public HTTPS -- there is deliberately NO credential in the client. See",
+    "README.md for why an embedded token was rejected.",
+    "",
+    "This file is the ONLY thing the updater needs to read. Keep it small and",
+    "keep it valid JSON: a malformed manifest must fail soft in the client, but",
+    "there is no reason to rely on that.",
+    "",
+    "The installer is a GitHub Release asset rather than a repository blob.",
+    "Keep installer_url version-specific: an existing manifest must always",
+    "resolve to the exact immutable bytes whose size and SHA-256 it declares."
+  ],
+  "schema": 1,
+  "version": "v3.1.364",
+  "published": "2026-11-09",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.364/SmartCuff_Setup.exe",
+  "sha256": "e5593a1bba8cd1ebeb30b68c7d207de336678cb3cd2a52fb4547db84c6e0ccca",
+  "size_bytes": 224194412,
+  "min_supported": null,
+  "notes": "# Smart Cuff v3.1.364 — Default\r\n\r\nSmart Const and High Max now calculate the PVR target on the Arduino after\r\ndeflation, using the cuff oscillation-envelope peak. High Max keeps its initial\r\n200 mmHg inflation and replaces the fixed 100 mmHg PVR target with this estimate.\r\n\r\n- Smart Const: accept peaks from 30 through 140 mmHg; cap the PVR target at 130.\r\n- High Max: use accepted peaks from 30 through 140 mmHg directly.\r\n- Rejected estimates: use 80 mmHg. Refill and quiet hold use the same final target,\r\n  with no +5 mmHg or arterial-MAP bias correction.\r\n- The GUI and standalone presets share the firmware runner. The GUI validates\r\n  each cycle's target and stops if the report is missing or inconsistent.\r\n\r\nThe estimator uses forward/backward 0.5–5 Hz Butterworth filtering (fourth-order\r\nprototype), pulse harmonics, wide-window SNR and two joined Gaussian halves.\r\nSNR must pass 5 dB; supported measured-crest recovery requires above 7 dB.\r\nThe OLED and GUI distinguish analysis, accepted target and fallback.\r\n\r\nThe faster embedded variant took about 24 seconds on a typical synthetic pulse,\r\n31 seconds for 50 bpm with a 135 mmHg peak, and 43 seconds at 30 bpm. Analysis\r\nkeeps the pump off and services STOP and existing pressure protection. A\r\n60-second computation timeout returns 80; STOP or a safety fault aborts without\r\nrefill. Capture now runs in the existing 50 Hz ADC interrupt.\r\nCadence scratch storage also saves 1.8 KB of stack without changing any replay\r\nresult or increasing the static workspace.\r\n\r\nHost replay accepted 2,704 of 3,024 retained intervals. Compared with native-rate\r\noffline analysis, 22 became accepted and 44 became rejected; the median paired\r\nabsolute peak difference was 0.535 mmHg. Four known wrong acceptances remain in\r\nthe 96-case artifact suite, all with interference near the cardiac rate.\r\n\r\nDevice C was flashed through the protected snapshot/restore transaction; its\r\ncalibration, valve limits, feedforward and PID values were verified afterward.\r\nThe uploader now compiles before entering the bootloader, so build failures\r\ncannot erase the running firmware. GUI suites, layout/smoke checks, numerical\r\nreplay, target validation and STOP tests passed.\r\n\r\nThe final seed-213 soak completed six cycles across all five presets with no\r\nflags: 29,331/29,331 telemetry frames (100%). All six deflations passed the\r\nactuator-reversal gate. Steady-band rates were 3.73 and 3.59 mmHg/s for Smart\r\nConst, 3.58 for Regular and 3.59 for High Max (command 4); whole-descent CVP\r\nrates were 0.88 for Arm and 0.96 for Wrist (command 1). The control scorers now\r\nrecognize direct deflation starts and exclude the subsequent analysis pause.\r\nFinal GUI/firmware START runs also passed: Smart Const 5,718/5,718 frames and\r\nHigh Max 5,665/5,665 frames, both with the expected 80 mmHg fallback.\r\n\r\nThis update is for the requested bench evaluation. The operator confirmed the\r\nProSim pneumatic connection needs changing. Runs without that connection test\r\nfallback and pressure control; accepted-peak operation still needs physical\r\npulsatile testing after reconnection. Pressure-only SNR cannot exclude every\r\nmovement artifact, and this release does not establish clinical accuracy.\r\nOne earlier High Max run stopped on a malformed serial result; the guard\r\nrefused it. A subsequent idle link probe and complete repeat passed. The failed\r\nrun is retained; an intermittent transport fault has not been proven resolved.\r\n\r\nThe installer is unsigned. On a first installation, choose **More info → Run\r\nanyway** if Windows SmartScreen appears. Existing Default installations set to\r\nLatest use the verified automatic update path.",
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.364",
+  "mandatory": false,
+  "channel": "stable",
+  "_channel_note": [
+    "stable is the only channel today. If a test channel is ever added, publish",
+    "a second manifest (version-beta.json) rather than adding branching logic to",
+    "the client -- the client stays a dumb fetch-and-compare."
+  ]
 }
