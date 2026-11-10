@@ -1,31 +1,31 @@
 {
-  "_comment": [
-    "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
-    "public HTTPS -- there is deliberately NO credential in the client. See",
-    "README.md for why an embedded token was rejected.",
-    "",
-    "This file is the ONLY thing the updater needs to read. Keep it small and",
-    "keep it valid JSON: a malformed manifest must fail soft in the client, but",
-    "there is no reason to rely on that.",
-    "",
-    "The installer is a GitHub Release asset rather than a repository blob.",
-    "Keep installer_url version-specific: an existing manifest must always",
-    "resolve to the exact immutable bytes whose size and SHA-256 it declares."
-  ],
-  "schema": 1,
-  "version": "v3.1.367",
-  "published": "2026-11-09",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.367/SmartCuff_Setup.exe",
-  "sha256": "49520c50238d2d8f5aabb853a8178a70129d2cc3328481e799845d9d781fef60",
-  "size_bytes": 224224515,
-  "min_supported": null,
-  "notes": "# Smart Cuff v3.1.367 - Default\r\n\r\nSmart Const and High Max now calculate their PVR target on the Arduino within a 9.5-second computation budget, reserving reporting time below ten seconds. Accepted estimates use the cuff-envelope peak. Rejection or numerical timeout returns 80 mmHg; STOP or a protection fault aborts without refill.\r\n\r\nThe 0.5-5 Hz Butterworth filter, 5 dB SNR threshold, supported split-Gaussian peak, measured recovery and pressure bounds remain. Smart Const caps accepted 130-140 mmHg peaks at 130; High Max permits targets through 140. Radial MAP and bias correction are not inputs. Redundant fits, overlapping windows and raw predictions were reduced; final raw-screen changes preserve every retained historical replay decision and diagnostic.\r\n\r\nThe device and GUI show calculation stage, elapsed seconds and activity. RUN blinks 0.5 seconds on/0.5 seconds off per new 5 mmHg during inflation/deflation, merging overlapping triggers. PVR and waits blink at entry and every five seconds. The startup screen shows **v3.1.344 / 11/09/2026**.\r\n\r\n## Physical simulator qualification\r\n\r\nDevice C, ProSim 8, firmware START runner shared by GUI and standalone operation. OLED mirroring was active. Each completed run applied the reported final target, refilled to it and finished safely.\r\n\r\n| Protocol / simulator setting | PVR target (mmHg) | Calculation (s) | Estimate outcome | Control score |\r\n|---|---:|---:|---|---|\r\n| Smart Const, 120/80, 72 bpm | 99.42 | 7.638 | Accepted | PASS |\r\n| High Max, 120/80, 30 bpm | 95.62 | 8.745 | Accepted | PASS |\r\n| High Max, 165/100, 72 bpm | 80.00 | 7.746 | Rejected: raw disagreement | PASS |\r\n\r\nEach run delivered **100%** of emitted sequence-numbered telemetry with no duplicates. Distinct OLED frames and one-second progress reports were retained. STOP during physical calculation reached safe idle in 0.125 seconds, with no refill after cancellation.\r\n\r\n**Known failed peak-estimation case:** at 165/100 and 72 bpm, the filtered candidate was 123.04 mmHg (SNR 22.74 dB), but raw-envelope agreement rejected it. The device returned the requested 80 mmHg fallback in 7.746 seconds. This passed timing and control checks; it did not pass peak acceptance. The original failed acceptance-matrix result is retained. Further work is needed on this higher-pressure disagreement; this release does not claim successful estimates for every simulator setting.\r\n\r\n## Ten-minute seed-213 soak\r\n\r\n| Cycle | Preset | Measured deflation (mmHg/s) | Command ratio | Reversal score | Delivery |\r\n|---:|---|---:|---:|---|---:|\r\n| 1 | smart const | 3.62 | 0.91 | PASS | 100% |\r\n| 2 | arm cvp | 0.91 | 0.91 | PASS | 100% |\r\n| 3 | smart const | 3.60 | 0.90 | PASS | 100% |\r\n| 4 | wrist cvp | 0.97 | 0.97 | PASS | 100% |\r\n| 5 | regular | 3.60 | 0.90 | PASS | 100% |\r\n| 6 | high max | 3.58 | 0.89 | PASS | 100% |\r\n\r\nSoak delivery: **27337/27337 frames (100%)**, no flags. Non-CVP rates use the 150-40 mmHg band; CVP uses the whole descent. Calculation time is excluded from the scored descent. Soak PVR calculations: 6.279, 6.154, 7.316 seconds. The scored physical runs plus soak delivered **42287/42287 frames (100%)**.\r\n\r\n## Software checks and limits\r\n\r\n120 focused checks, all seven required GUI suites including layout/smoke, and the firmware compile passed (215376 bytes). Protected flash/readback preserved device C calibration, valve limits, feedforward and PID. Clean 72/50/30 bpm Due tests accepted in 6.075/4.736/4.985 seconds; the maximum peak error in those tests was 1.459 mmHg.\r\n\r\nHistorical replay accepted 2,643/3,024 intervals, versus 2,704 with firmware343: 13 newly accepted and 74 newly rejected. Among 2,630 paired accepted intervals, the median absolute peak difference was 0.30 mmHg; 61 differ by more than 5 and 13 by more than 10 mmHg. These compare algorithms, not arterial-reference accuracy. The 96-case artifact suite retains four known wrong acceptances at smooth pulse-rate interference. Simulator and replay tests do not establish clinical accuracy or guarantee maximum constant-hold amplitude for every measurement.\r\n\r\n## Build and installation\r\n\r\nApplication **v3.1.367**; firmware wire identity **rev27v-followup-344**. Default source commit `1dc4c05b1deffbbcf0f1bfe69e6a204ef1173a60`. Built UTC `2026-11-09T22:25:15.8825995Z` from a clean tree; installer 224224515 bytes; SHA-256 `49520c50238d2d8f5aabb853a8178a70129d2cc3328481e799845d9d781fef60`.\r\n\r\nThe installer is unsigned. For a first manual installation, choose **More info -> Run anyway** if SmartScreen appears. Existing Default installations set to Latest use the verified automatic update path. This release supersedes unpublished versions 365/366; those installers were never promoted.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.367",
-  "mandatory": false,
-  "channel": "stable",
-  "_channel_note": [
-    "stable is the only channel today. If a test channel is ever added, publish",
-    "a second manifest (version-beta.json) rather than adding branching logic to",
-    "the client -- the client stays a dumb fetch-and-compare."
-  ]
+    "_comment":  [
+                     "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
+                     "public HTTPS -- there is deliberately NO credential in the client. See",
+                     "README.md for why an embedded token was rejected.",
+                     "",
+                     "This file is the ONLY thing the updater needs to read. Keep it small and",
+                     "keep it valid JSON: a malformed manifest must fail soft in the client, but",
+                     "there is no reason to rely on that.",
+                     "",
+                     "The installer is a GitHub Release asset rather than a repository blob.",
+                     "Keep installer_url version-specific: an existing manifest must always",
+                     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
+                 ],
+    "schema":  1,
+    "version":  "v3.1.369",
+    "published":  "2026-11-10",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.369/SmartCuff_Setup.exe",
+    "sha256":  "660fee06cde96793a4fd12ffa4317801cb35df9e509e2ee7275d637130fb5ed3",
+    "size_bytes":  224246906,
+    "min_supported":  null,
+    "notes":  "Smart Const and High Max use an updated oscillation-envelope estimator on the Arduino Due. Filtered Gaussian peak selection gives the measured crest more influence and limits isolated excursions. Full residual, raw-envelope, SNR and measured-support checks remain. The offline MATLAB implementation includes the corresponding fitter and consensus corrections.\r\n\r\nThe update also measures missing sampling-edge SNR directly, prevents an unqualified raw diagnostic from vetoing a supported crest, and averages two accepted sampling origins only when they agree within 5 mmHg. It does not apply an arterial-MAP regression correction.\r\n\r\nPaired development results, including every 80 mmHg fallback in final-output errors:\r\n\r\n| Dataset | Previous final-output MAE | Updated final-output MAE |\r\n|---|---:|---:|\r\n| Firmware replay, 2,825 screened human intervals | 8.57 mmHg | 8.13 mmHg |\r\n| Native MATLAB, same screened intervals | 8.45 mmHg | 8.05 mmHg |\r\n| Firmware replay, 89 historical simulator settings | 9.18 mmHg | 4.52 mmHg |\r\n\r\nAll 3,024 retained human intervals and 361 older bench files were processed. The latter have no arterial reference; 343 contain no sustained deflation. Existing reference exclusions and calibration overlays were preserved.\r\n\r\nFresh device C testing completed 22 physical settings: 18 accepted targets and four fallbacks, with 100% delivery (103843/103843 frames). Accepted-peak MAE was 3.99 mmHg; final-output MAE was 10.99 mmHg including fallbacks. Two accepted errors exceeded 10 mmHg, with maximum 17.08. Very-low-pressure settings expose the current policy: candidates below 30 return 80. These new acquisitions are not a paired live comparison with the preceding firmware. Simulator references are calculated DBP+(SBP-DBP)/3, not independently measured arterial MAP.\r\n\r\nEvery physical calculation finished in 6.600-9.507 seconds; accepted estimates finished by 9.193 seconds. STOP during physical calculation reached vented, pump-off IDLE in 0.204 seconds without refill. Protected upload restored and verified device C calibration, PID, valve limits and feedforward.\r\n\r\nThe 5 dB SNR threshold, \u003e7 dB measured-crest recovery, 0.5-5 Hz Butterworth filter, 30-140 mmHg candidate range, Smart Const 130 mmHg cap, High Max 140 mmHg ceiling, and 80 mmHg rejection fallback remain. Human accepted-error SD remains about 8 mmHg. Pulse-rate artifacts and two additional coherent amplitude-excursion challenges remain unresolved; these development results do not establish clinical MAP accuracy or an optimal subsequent constant-hold pressure.\r\n\r\nValidation: 41 numerical/uploader checks, 98 focused GUI/runner/OLED checks, eight MATLAB suites, seven standard GUI/layout/smoke suites, firmware compile and protected device flash passed.\r\n\r\nTen-minute seed-213 soak: all six scored reversal/monotonicity verdicts PASS. Telemetry delivery **100.00% (26782/26782)**.\r\n\r\n| Cycle / preset | Measured slope (mmHg/s) | Command (mmHg/s) | Reversal/monotonicity |\r\n|---|---:|---:|---|\r\n| 1 / smart const | 3.58 | 4.00 | PASS |\r\n| 2 / arm cvp | 0.94 | 1.00 | PASS |\r\n| 3 / smart const | 3.60 | 4.00 | PASS |\r\n| 4 / wrist cvp | 0.97 | 1.00 | PASS |\r\n| 5 / regular | 3.61 | 4.00 | PASS |\r\n| 6 / high max | 3.58 | 4.00 | PASS |\r\n\r\nNon-CVP slopes are fitted over 150-40 mmHg; CVP uses its full deflation window. Passing the reversal/monotonicity gates does not imply exact slope tracking. Control gains, feedforward, valve limits and timing were unchanged.\r\n\r\n\r\nApplication v3.1.369; firmware rev27v-followup-346, displayed as v3.1.346 dated 11/10/2026. Default channel. The installer is unsigned and distributed with verified size and SHA-256 through the existing update mechanism.\r\n\r\nSource commit: `ff42d88e7162e29a4c03ee679c848c2bf011ece3` on Default.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.369",
+    "mandatory":  false,
+    "channel":  "stable",
+    "_channel_note":  [
+                          "stable is the only channel today. If a test channel is ever added, publish",
+                          "a second manifest (version-beta.json) rather than adding branching logic to",
+                          "the client -- the client stays a dumb fetch-and-compare."
+                      ]
 }
