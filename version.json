@@ -1,31 +1,31 @@
 {
-  "_comment": [
-    "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
-    "public HTTPS -- there is deliberately NO credential in the client. See",
-    "README.md for why an embedded token was rejected.",
-    "",
-    "This file is the ONLY thing the updater needs to read. Keep it small and",
-    "keep it valid JSON: a malformed manifest must fail soft in the client, but",
-    "there is no reason to rely on that.",
-    "",
-    "The installer is a GitHub Release asset rather than a repository blob.",
-    "Keep installer_url version-specific: an existing manifest must always",
-    "resolve to the exact immutable bytes whose size and SHA-256 it declares."
-  ],
-  "schema": 1,
-  "version": "v3.1.384",
-  "published": "2026-11-12",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.384/SmartCuff_Setup.exe",
-  "sha256": "6024cfab8ebd06f247fd8e96c9bb9a7f7330f1a0df69d9d5cbe1e2cd60069182",
-  "size_bytes": 235394554,
-  "min_supported": null,
-  "notes": "Smart Cuff v3.1.384 improves SysID identification under measured stable leakage.\r\n\r\n- Qualify two steady sealed windows at each actual pressure band, then use that local activity threshold throughout discovery, gain fitting, independent repeats and evidence review. Closed-valve leakage cannot dilute gain. Feedforward retains total measured pressure decay.\r\n- Correct the initial landing near85 mmHg before the full30-second sealed check. Keep the70-mmHg endpoint floor and0.85-mmHg/s hard decay limit. Missing, uncertain, changing or inconsistent evidence rejects adoption.\r\n- Scout the freshly read closed-side upper valve limit, measure and re-measure it. A controlled active scout returns to90%; an uncontrolled scout aborts. Newly measured critical brackets keep fine precision, while interior spacing is bounded to2%.\r\n- Give completed verified pressure restoration a separate180-second discovery allowance. Require fresh idle telemetry, pump off and finite comparable pressure before any credit. Mandatory5-second sealed support, post-probe evidence and bleeds retain the original260-second acquisition/support budget (360 LOW). Check both budgets before the next valve probe. If pressure falls below the comparison range during settling, make one measured correction capped190 (55 LOW), then repeat the original sealed checks. The reference/range remain unchanged; a failed correction rejects. Continuous exposure, recovery limits, local inflation watchdogs and quality gates remain active.\r\n\r\nValidation:705 combined SysID, installer and workflow tests passed. Session-scoped Qt application ownership in the test fixture resolves the prior native callback crash. Synthetic measured leakage0.4–0.8 mmHg/s previously approximately halved a known0.5 valve gain; using the measured local floor recovers0.5. This is a software regression, not deliberately added physical leakage.\r\n\r\nThe measurement-only large-cuff comparison and all prior failed attempts are retained with raw serial and all3 native NI channels. No new tuning, device snapshot or fleet profile has been adopted. Run04 was intentionally operator-interrupted; its failed immediate readback remains alongside successful late verification. Requested2% in that run actually used1% and is not a validated2% comparison. Final run10 qualified local HIGH sealed decay around0.54 mmHg/s but failed comparable settled pressure after its one capped correction (147.81 versus164.09 mmHg). All10 attempts ended safe; before/after settings matched, with separately retained late verification for interrupted/delayed-readback attempts. Full large-cuff identification remains unqualified. The accepted saved tuning is retained. Final decisions and every raw signal are in the local study report.\r\n\r\nFirmware remains rev27v-followup-351. Production PID, valve limits, PVR peak+5, Smart Const/High Max caps130/140 and fallback80 are unchanged. Source b65d164192129a30776eb8d0e0fc18147720c42c, default branch. Versions378–382 were not published.",
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.384",
-  "mandatory": false,
-  "channel": "stable",
-  "_channel_note": [
-    "stable is the only channel today. If a test channel is ever added, publish",
-    "a second manifest (version-beta.json) rather than adding branching logic to",
-    "the client -- the client stays a dumb fetch-and-compare."
-  ]
+    "_comment":  [
+                     "SmartCuff GUI update manifest. Fetched by the installed GUI over plain",
+                     "public HTTPS -- there is deliberately NO credential in the client. See",
+                     "README.md for why an embedded token was rejected.",
+                     "",
+                     "This file is the ONLY thing the updater needs to read. Keep it small and",
+                     "keep it valid JSON: a malformed manifest must fail soft in the client, but",
+                     "there is no reason to rely on that.",
+                     "",
+                     "The installer is a GitHub Release asset rather than a repository blob.",
+                     "Keep installer_url version-specific: an existing manifest must always",
+                     "resolve to the exact immutable bytes whose size and SHA-256 it declares."
+                 ],
+    "schema":  1,
+    "version":  "v3.1.385",
+    "published":  "2026-11-13",
+    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.385/SmartCuff_Setup.exe",
+    "sha256":  "4bfab44193209f92984c588d10f201aadeffac4f84424efcbc861ed9277de473",
+    "size_bytes":  224537740,
+    "min_supported":  null,
+    "notes":  "Smart Cuff v3.1.385 corrects how SysID establishes a sealed, settled pressure before measuring valve response.\n\n- Wait with the valve closed before bleeding inflation headroom. After pumping, allow up to 45 seconds of extra settling within the existing 180-second preparation budget.\n- In pressure-matched SysID, an exponential decay extrapolation is diagnostic. Require supported measured decay within 0.85 mmHg/s, then the original two independent local baseline windows. HIGH must retain pressure support at or above 80 mmHg. Fresh IDLE telemetry must confirm pump off and valve closed before probing.\n- Prepare the full 30-second preflight near 90 mmHg, retaining the measured landing tolerance, 70-mmHg endpoint floor, 100-mmHg preparation command cap, and bounded corrections. Production PVR targets are unchanged.\n\nValidation: 735 combined SysID, installer, and workflow tests passed. All seven legacy smoke suites, helpers, parsers, analyzers, and the final 179 worker assertions passed. New regressions cover open-valve, stale, unsupported, and changing sealed histories. These are software checks; no complete independently validated large-cuff SysID model has been accepted.\n\nFour new measurement-only attempts and every original failed run remain retained with serial data, raw sensor voltages, all three native NI channels, exact source freezes, and complete device readbacks where acquisition occurred. The latest attempt lost pressure from 89.57 to 59.79 mmHg during the 30-second sealed preflight and correctly rejected before scanning. The preceding attempt passed preflight but measured HIGH sealed decay of 1.498 mmHg/s despite a predicted asymptote of 0.246. No new tuning or calibration snapshot was adopted. The physical cause of changing sealed loss remains unresolved.\n\nFirmware remains rev27v-followup-351. Saved device tuning, calibration, clinical protocols, PVR peak+5, Smart Const/High Max caps 130/140 mmHg, and fallback 80 mmHg are unchanged. Source: default commit 4f6c4dbed6dc3c0f403db1c04c445f698273aaf1.",
+    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.385",
+    "mandatory":  false,
+    "channel":  "stable",
+    "_channel_note":  [
+                          "stable is the only channel today. If a test channel is ever added, publish",
+                          "a second manifest (version-beta.json) rather than adding branching logic to",
+                          "the client -- the client stays a dumb fetch-and-compare."
+                      ]
 }
