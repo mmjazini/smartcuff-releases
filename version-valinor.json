@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "version": "v3.2.140",
+  "published": "2026-11-15",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.2.140/SmartCuff_Setup.exe",
+  "sha256": "82892876fd7a7a14753cd9949f3ca1b7cd09f9b3a845683e4dac54815d023c72",
+  "size_bytes": 93083136,
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.2.140",
+  "notes": "Compiled Valinor operator application. Removes reviewed legacy engineering source while preserving calibration, recordings and logs."
+}
