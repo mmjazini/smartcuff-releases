@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "version": "v3.1.392",
+  "version": "v3.1.393",
   "published": "2026-11-15",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.392/SmartCuff_Setup.exe",
-  "sha256": "79218b6e2f49d461723062f403bb73f4b9db87e62dcf26467f0338c1fe31e6be",
-  "size_bytes": 98912846,
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.392",
-  "notes": "Compiled Default operator application. Removes reviewed legacy engineering source while preserving calibration, recordings and logs."
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.393/SmartCuff_Setup.exe",
+  "sha256": "35b0d98266b6823d06626c2551a963cd9ddf0723a1d873ffd21ce96cd4c09e69",
+  "size_bytes": 98923406,
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.393",
+  "notes": "Default v3.1.393 fixes protected firmware alignment from the reviewed legacy gauge release. Unknown or locked firmware remains blocked. Firmware354, calibration and protocol behavior are unchanged. Compiled operator application."
 }
