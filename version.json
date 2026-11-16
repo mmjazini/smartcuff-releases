@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "version": "v3.1.394",
+  "version": "v3.1.395",
   "published": "2026-11-16",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.394/SmartCuff_Setup.exe",
-  "sha256": "ae1ddb12cf6d64dd35e9200aa873f54156d8678d6392bcaf8ca5fd68a92719b4",
-  "size_bytes": 98916182,
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.394",
-  "notes": "Default v3.1.394 improves native process evidence: fatal tracebacks reach both\r\nlogs and recordings on supported local filesystems. Ordinary lifecycle events\r\nremain nonduplicated, with the mirror status and both paths recorded at startup.\r\nUnavailable hard links retain the primary fatal dump and ordinary mirrors;\r\nunwritable logging remains nonblocking. The compiled release self-check verifies\r\ndirect native traceback capture.\r\n\r\n280 source tests, seven project checks, GUI layout and smoke checks pass.\r\nFirmware354, calibration and control settings are unchanged. The universal lock\r\nremains disabled for testing. This improves crash capture; it does not claim to\r\nidentify or resolve the historical October18 access violation."
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.395/SmartCuff_Setup.exe",
+  "sha256": "e6ea061dbb1e9155b5dba3df663e28cf9038edff586f520ba97553e2df795c95",
+  "size_bytes": 98907273,
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.395",
+  "notes": "Default v3.1.395 finalizes operator Help and capture browsing. Six offline topics\r\nexplain START/REC, STOP/Stop Rec, PVR fallback, calibration, updates and lock.\r\nF1 opens Help; File opens logs and the searchable capture index. Dates, device,\r\nprotocol, pressure range, sample delivery and completion are visible. Relative\r\nlinks use each index's own mirror; corrupt index entries are reported/preserved\r\nwithout hiding valid captures. Native setup transcripts are mirrored. Windows\r\nPowerShell 5 native compiler informational stderr stays in the log; actual\r\nnative build failure restores the previous installer.\r\n\r\n396 selected software checks, seven project checks, GUI layout/smoke and offline\r\nbrowser checks pass. The operator package excludes project source and engineering\r\nguides. Universal lock remains disabled for testing. Firmware354, safety limits,\r\ncalibration, SysID and stored settings are unchanged. Independent/physical/fleet\r\nqualification and the historical crash diagnosis remain separate."
 }
