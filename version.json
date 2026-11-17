@@ -1,10 +1,10 @@
 {
-    "schema":  1,
-    "version":  "v3.1.399",
-    "published":  "2026-11-17",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.399/SmartCuff_Setup.exe",
-    "sha256":  "ccf83f5388eaf0adc10f9f63466aa04515e35a02b0444265bdeb6d695661f7df",
-    "size_bytes":  98936128,
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.399",
-    "notes":  "Smart Cuff v3.1.399 requires Matched pressure + checks for SysID tuning on every device. Saved Hold-probe and other historical selections are preserved for comparisons without applying tuning and cannot select normal, retry or direct worker tuning scans.\n\nSysID archives record the selected method, and final rejection warnings show all recorded measurement-quality failures. The existing measurement, pressure, exposure, stationarity, independent-repeat, adoption and saved-state protections remain in place.\n\nValidated with 735 SysID regressions, the project checks, GUI layout audit and smoke test. Firmware remains rev27v-followup-355. This update corrects procedure selection; it does not claim a new accepted or qualified SysID measurement."
+  "schema": 1,
+  "version": "v3.1.402",
+  "published": "2026-11-17",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.402/SmartCuff_Setup.exe",
+  "sha256": "9eb5f126fba96ce32f059595645367e1798292c81d2d81053c9a7207cd924542",
+  "size_bytes": 98990591,
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.402",
+  "notes": "Smart Cuff v3.1.402 fixes startup alignment for older unlocked SmartCuff devices A-H whose firmware predates outgoing telemetry checksums. The protected updater requires a live historical boot/version, readiness, matching device identity, complete explicit pump-off/vented IDLE telemetry, and continuously advancing time/sequence before erase. It inspects complete received batches before approval, including later unsafe or partial frames. The existing snapshot/upload/verified-restore transaction preserves the connected device's calibration and control settings.\n\nChecksum-capable, unknown, silent, active and locked controllers retain the existing refusal boundaries. Startup reuses the already verified historical version without resetting the controller again just to read it.\n\nValidation: 176 focused compatibility, integrity, startup, native, calibration-preservation and release checks plus the seven standard GUI checks passed. The read-only migration safety check passed on actual device A firmware233. Firmware remains rev27v-followup-355.\n\nThis release also includes the previously unreleased v3.1.400 SysID acquisition/recovery work: fresh whole-band evidence replaces superseded acquisitions after verified recovery, with the existing exposure and final quality gates. No new qualified SysID result is claimed."
 }
