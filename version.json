@@ -1,10 +1,10 @@
 {
-    "schema":  1,
-    "version":  "v3.1.406",
-    "published":  "2026-11-19",
-    "installer_url":  "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.406/SmartCuff_Setup.exe",
-    "sha256":  "c894663f69ff69429eaf63aeef600a244acff97ee13a22a8b438672a09216b0b",
-    "size_bytes":  99071838,
-    "notes_url":  "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.406",
-    "notes":  "Smart Cuff v3.1.406 repairs plot navigation: Zoom/Measure selection, wheel and trackpad zoom, shared time ranges, drag-pan, paused rendering, Live, Fit All, Clear and measurement refresh. AutoY fits the visible interval independently on both axes. NI display unit changes use retained native voltages, and the Fluke trace now has a consistent channel identity.\n\n79 software checks and the legacy GUI suites passed. The compiled installer also requires an offline Qt navigation check. Full recording data and device profiles are preserved. Firmware remains rev27v-followup-355; unresolved SysID/refill hardware behavior is not claimed fixed by this software update."
+  "schema": 1,
+  "version": "v3.1.407",
+  "published": "2026-11-19",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.407/SmartCuff_Setup.exe",
+  "sha256": "70d49f88f21b253e1bb2c91900c815f967dc4961b7ded7c38575498d9bf4d023",
+  "size_bytes": 99061421,
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.407",
+  "notes": "Smart Cuff v3.1.407 repairs two startup paths observed in recent logs. A partial serial packet no longer hides the firmware announcement or subsequent valid samples. The real source PDF worker bootstraps its module path, and native PDF workers resolve relative inputs and run from the application directory. Report failures now show useful worker exit and log information.\r\n\r\n108 focused regressions and the standard GUI, parser, worker, analyzer, layout and smoke checks passed. Both failed startup captures replay with all 49 previously skipped samples recovered and original bytes unchanged. Compiled release validation additionally requires startup recovery and ordinary/detached reports from a foreign working directory.\r\n\r\nFirmware remains rev27v-followup-355. This GUI update does not claim to fix pending SysID execution, refill delivery, inflation coverage or unsettled-hold behavior that requires hardware validation. Calibration, PID, pressure limits and device-lock policy are preserved."
 }
