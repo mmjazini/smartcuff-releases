@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "version": "v3.1.409",
-  "published": "2026-11-19",
-  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.409/SmartCuff_Setup.exe",
-  "sha256": "7eba9475bb1edc077699599358e710237fede4d5694e34d8abc6e0ef34129697",
-  "size_bytes": 99094097,
-  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.409",
-  "notes": "Default v3.1.409 reports the measured envelope peak and adds a two-minute\nstandalone protocol-selection timeout. The timeout restarts after meaningful\nknob movement, including movement within one preset zone. START at the deadline\ntakes priority. Runs, GUI-owned operation, calibration, completion and fault\nscreens do not use this inactivity timeout.\n\nOLED and GUI results now show the detected peak. PVR continues at peak+5 mmHg,\ncapped at130 for Smart Const and140 for High Max. Rejected peaks still use the\nlabeled80-mmHg fallback. Raw events retain peak and actual hold separately.\n\nFirmware:rev27v-followup-356; OLED release date11/19/2026.\nCalibration, estimator, SNR, PID, valve limits and pressure limits are unchanged.\n\nValidation:166 focused checks, then31 reporting/banner/help checks (overlapping\nsets); seven standard suites plus protocol parity. Arduino Due compilation\npassed. Hardware was unavailable: protected flashing and a ten-minute scored\nsoak remain outstanding. This release does not claim bench qualification or\nresolution of the previously recorded control-performance weaknesses."
+  "version": "v3.1.410",
+  "published": "2026-11-20",
+  "installer_url": "https://github.com/mmjazini/smartcuff-releases/releases/download/v3.1.410/SmartCuff_Setup.exe",
+  "sha256": "d3e16dd81deb55425d0ec748d2be83a01112fa318ed901f1b1ab77da341e435b",
+  "size_bytes": 99112102,
+  "notes_url": "https://github.com/mmjazini/smartcuff-releases/releases/tag/v3.1.410",
+  "notes": "The Default menu now offers Regular, Regular Smart, High, High Smart, Arm CVP and Wrist CVP in that order in the GUI and standalone device. High inflates to200mmHg and adds a fixed125mmHg PVR hold with the existing130mmHg approach. Regular Smart replaces Smart Const; High Smart replaces High Max Pressure, preserving their envelope-peak +5 targets, caps and80mmHg fallback.\n\nHistorical preset names remain accepted for imports. Existing custom presets that collide with a newly reserved name remain available under a distinct suffix. Simulator results recognize both smart presets and historical names. Calibration, saved PID, valve limits and estimator thresholds are unchanged.\n\nThe firmware compiles and software parity/regression checks pass. Protected flash/restore and the required ten-minute hardware soak remain pending bench confirmation; this release is not yet bench-qualified."
 }
